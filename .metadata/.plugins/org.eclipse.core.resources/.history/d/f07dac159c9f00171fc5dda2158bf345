@@ -14,36 +14,31 @@ public class BinaryTree<T extends Comparable<T>> {
 		System.out.println(node.leftChild.key);
 	}
 	
-//	public void delete(T key){
-//		Node newNode=new Node();
-//		newNode.key=key;
-//		Node tem=root;
-//		
-//		while(newNode.key!=tem.key){
-//			if (newNode.key.compareTo(tem.key) < 0) {
-//				tem = tem.leftChild;
-//			} else {
-//				tem = tem.rightChild;
-//			}
-//		}
-//		//tem是最后和给定值相等的节点。
-//		if (tem.rightChild==null)
-//				transplant();
-//		else if  tem.rightChild==null
-//				transplant();
-//		else y=treeMinimum(tem.rightChild)   //右孩子中的最小值。
-//				if (y.p!=z)
-//				    transplant(t,y,y.right)
-//				    y.right=z.right
-//				    y.right.p=y
-//				  Transplant(T,z,y)
-//		y.left.p=z.left
-//	}
-//
-//	private void transplant() {
-//		// TODO Auto-generated method stub
-//		
-//	}
+	public void delete(T key){
+		Node newNode=new Node();
+		newNode.key=key;
+		Node tem=root;
+		
+		while(newNode.key!=tem.key){
+			if (newNode.key.compareTo(tem.key) < 0) {
+				tem = tem.leftChild;
+			} else {
+				tem = tem.rightChild;
+			}
+		}
+		//tem是最后和给定值相等的节点。
+		if tem.rightChild==null
+				transplant();
+		else if  tem.rightChild==null
+				transplant();
+		else y=treeMinimum(tem.rightChild)   //右孩子中的最小值。
+				if
+	}
+
+	private void transplant() {
+		// TODO Auto-generated method stub
+		
+	}
 
 	public void insert(T key) { // 向二叉树中插入
 		Node newNode = new Node();
