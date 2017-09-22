@@ -1,0 +1,28 @@
+package class1;
+
+import java.io.FileNotFoundException;
+
+import org.omg.PortableInterceptor.INACTIVE;
+
+import class1.DoubleDirectionLinkedList.doubleNode;
+import class1.LinkedList.Node;
+
+public class TestClass {
+
+				public static void main(String[] args) throws FileNotFoundException {
+					//单链表测试
+//                  LinkedList<Integer> ll=new LinkedList<Integer>();
+//                  ll.insert(6);
+//                  ll.insert(6);
+//                  Node first=ll.first;
+//                  ll.print(first);
+					
+					DoubleDirectionLinkedList<Integer> ddll=new DoubleDirectionLinkedList<>();
+					ddll.insert(54);
+					ddll.insert(5);
+					doubleNode node=ddll.head;
+					ddll.print(node);
+
+
+}
+}
