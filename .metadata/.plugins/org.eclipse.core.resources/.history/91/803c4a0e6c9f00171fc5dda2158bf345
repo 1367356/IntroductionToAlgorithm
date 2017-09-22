@@ -58,8 +58,9 @@ public class LinkedList<T> {
  				return first;
  				
 				}
-				public  void insert(T key){                  //利用泛型，可以用这个链表数据结构保存任意数据类型。插入链表数据，可以用这个方法来创建链表，也可以读入数据来创建。
+				public  void insert(T key){                  //插入链表数据，可以用这个方法来创建链表，也可以读入数据来创建。
     				Node<T> newNode=new Node<T>();
+    				System.out.println(key);
     				newNode.key=key;
 					newNode.link=null;
 					if(first==null){

@@ -15,6 +15,5 @@ public class TestClass {
                   Node first=ll.first;
                   ll.print(first);
 
-
 }
 }

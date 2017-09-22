@@ -13,17 +13,11 @@ public class LinkedList<T> {
 	            public int count;
 				class Node<T>{
 					Node<T> link;
-					int info;
-					T key;
-//					public Node(T key){
-//						this.key=key;
-//					}
-				}
-//				public void insertNode(Node<T> node){
-//					
-//				}
+					T info;
+
+				}	
 				public Node<T> createLinked() throws FileNotFoundException{
-					int num=0;
+					T num;
 					String inputline;
 					Class clazz=this.getClass();
 					InputStream ins=clazz.getResourceAsStream("data.txt");   //通过外部数据创建链表
@@ -58,9 +52,9 @@ public class LinkedList<T> {
  				return first;
  				
 				}
-				public  void insert(T key){                  //利用泛型，可以用这个链表数据结构保存任意数据类型。插入链表数据，可以用这个方法来创建链表，也可以读入数据来创建。
-    				Node<T> newNode=new Node<T>();
-    				newNode.key=key;
+				public  void insert(int i){                  //插入链表数据，可以用这个方法来创建链表，也可以读入数据来创建。
+					Node<T> newNode=new Node<T>();
+					newNode.info=i;
 					newNode.link=null;
 					if(first==null){
 						first=newNode;
@@ -73,7 +67,7 @@ public class LinkedList<T> {
 				}
 				public  void  print(Node<T> node){  //给一个头节点,打印链表
 					while(node!=null){
-						System.out.println(node.key);
+						System.out.println(node.info);
 						node=node.link;
 					}
 				}

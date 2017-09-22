@@ -8,20 +8,13 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 
-public class LinkedList<T> {
+public class LinkedList {
 	            public Node<T> first,newNode,last=null;  //创建三个节点，头节点，新节点，尾节点
 	            public int count;
 				class Node<T>{
 					Node<T> link;
-					int info;
-					T key;
-//					public Node(T key){
-//						this.key=key;
-//					}
-				}
-//				public void insertNode(Node<T> node){
-//					
-//				}
+					int info;	
+				}	
 				public Node<T> createLinked() throws FileNotFoundException{
 					int num=0;
 					String inputline;
@@ -58,9 +51,9 @@ public class LinkedList<T> {
  				return first;
  				
 				}
-				public  void insert(T key){                  //利用泛型，可以用这个链表数据结构保存任意数据类型。插入链表数据，可以用这个方法来创建链表，也可以读入数据来创建。
-    				Node<T> newNode=new Node<T>();
-    				newNode.key=key;
+				public  void insert(int i){                  //插入链表数据，可以用这个方法来创建链表，也可以读入数据来创建。
+					Node<T> newNode=new Node<T>();
+					newNode.info=i;
 					newNode.link=null;
 					if(first==null){
 						first=newNode;
@@ -73,11 +66,11 @@ public class LinkedList<T> {
 				}
 				public  void  print(Node<T> node){  //给一个头节点,打印链表
 					while(node!=null){
-						System.out.println(node.key);
+						System.out.println(node.info);
 						node=node.link;
 					}
 				}
-				public  int getLength(Node<T> node){  //获取链表长度
+				public static int getLength(Node<T> node){  //获取链表长度
 					int length=0;
 					while(node!=null){
 						node=node.link;

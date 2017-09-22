@@ -9,12 +9,8 @@ import class1.LinkedList.Node;
 public class TestClass {
 
 				public static void main(String[] args) throws FileNotFoundException {
-                  LinkedList<Integer> ll=new LinkedList<Integer>();
-                  ll.insert(6);
-                  ll.insert(6);
-                  Node first=ll.first;
-                  ll.print(first);
-
+                LinkedList<Integer> ll=new LinkedList<>();
+                Node<Integer> node=new Node<Integer>(5);
 
 }
 }
