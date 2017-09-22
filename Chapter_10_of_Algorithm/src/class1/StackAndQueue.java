@@ -7,16 +7,16 @@ public class StackAndQueue {
 	     
 	        static List<Integer> list=new ArrayList<Integer>();
 	        
-	        public static void main(String[] args) {
-				List<Integer> list=Inital();
-				boolean b=stackEmpty(list);
-				System.out.println(b);
-				list=Push(list,9);
-				System.out.println(list);
-				list=remove(list,9);
-				System.out.println(list);
-			}
-			public StackAndQueue(List< Integer> list){
+/*//	        public static void main(String[] args) {
+//				List<Integer> list=Inital();
+//				boolean b=stackEmpty(list);
+//				System.out.println(b);
+//				list=Push(list,9);
+//				System.out.println(list);
+//				list=remove(list,9);
+//				System.out.println(list);
+//			}
+*/			public StackAndQueue(List< Integer> list){
 				this.list=list;
 				System.out.println("hello github");
 

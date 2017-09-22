@@ -1,0 +1,17 @@
+package class1;
+
+public class LinkedList {
+	            public Node first,newNode,last=null;  //创建三个节点，头节点，新节点，尾节点
+				class Node{
+					Node node;
+					int info;	
+				}
+				
+				public  Node insert(Node head){
+					Node newNode=new Node();
+					newNode.key=key;
+					last.next=newNode;
+					newNode=last;
+					return last;
+				}
+}

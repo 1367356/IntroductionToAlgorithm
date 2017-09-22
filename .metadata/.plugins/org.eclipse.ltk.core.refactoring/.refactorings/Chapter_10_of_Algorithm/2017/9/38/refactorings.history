@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;next&apos; in &apos;class1.LinkedList.Node&apos; to &apos;link&apos;&#x0A;- Original project: &apos;Chapter_10_of_Algorithm&apos;&#x0A;- Original element: &apos;class1.LinkedList.Node.next&apos;&#x0A;- Renamed element: &apos;class1.LinkedList.Node.link&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;next&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;class1{LinkedList.java[LinkedList[Node^next" name="link" references="true" setter="false" stamp="1506047697519" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,15 @@
+package class1;
+
+public class TestClass {
+				public static void main(String[] args) {
+					LinkedList ll=new LinkedList();
+					ll.insert(5);
+					ll.insert(9);
+				}
+				public static print(ll){
+					while(ll.head!=null){
+						System.out.println(ll.key);
+						ll=ll.next;
+					}
+				}
+}

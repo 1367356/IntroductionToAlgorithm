@@ -1,0 +1,23 @@
+package class1;
+
+public class LinkedList {
+	            public Node first,newNode,last=null;  //创建三个节点，头节点，新节点，尾节点
+	            public int count;
+				class Node{
+					Node next;
+					int info;	
+				}		
+				public  void insert(int i){
+					Node newNode=new Node();
+					newNode.info=i;
+					if(first==null){
+						first=newNode;
+						last=newNode;
+					}else{
+						last.next=newNode;
+						last=newNode;
+					}
+                     count++;
+				}
+
+}
