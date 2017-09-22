@@ -18,7 +18,6 @@ public class StackAndQueue {
 			}
 			public StackAndQueue(List< Integer> list){
 				this.list=list;
-				System.out.println("hello github");
 
 			}
 			public static  List<Integer> Inital(){
