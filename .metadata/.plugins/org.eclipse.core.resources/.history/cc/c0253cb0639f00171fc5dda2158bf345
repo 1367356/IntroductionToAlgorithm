@@ -8,15 +8,14 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 
-public class LinkedList<T> {
-	            public Node<T> first,newNode,last=null;  //创建三个节点，头节点，新节点，尾节点
+public class LinkedList {
+	            public Node first,newNode,last=null;  //创建三个节点，头节点，新节点，尾节点
 	            public int count;
-				class Node<T>{
-					Node<T> link;
-					int info;
-					T key;
+				class Node{
+					Node link;
+					int info;	
 				}	
-				public Node<T> createLinked() throws FileNotFoundException{
+				public Node createLinked() throws FileNotFoundException{
 					int num=0;
 					String inputline;
 					Class clazz=this.getClass();
@@ -36,7 +35,7 @@ public class LinkedList<T> {
 							num=Integer.parseInt(s1);
 							if(num==999)
 								break;
-							newNode=new Node<T>();
+							newNode=new Node();
 							newNode.info=num;
 							newNode.link=null;
 							if(first ==null){
@@ -53,7 +52,7 @@ public class LinkedList<T> {
  				
 				}
 				public  void insert(int i){                  //插入链表数据，可以用这个方法来创建链表，也可以读入数据来创建。
-					Node<T> newNode=new Node<T>();
+					Node newNode=new Node();
 					newNode.info=i;
 					newNode.link=null;
 					if(first==null){
@@ -65,13 +64,13 @@ public class LinkedList<T> {
 					}
                      count++;
 				}
-				public  void  print(Node<T> node){  //给一个头节点,打印链表
+				public  void  print(Node node){  //给一个头节点,打印链表
 					while(node!=null){
 						System.out.println(node.info);
 						node=node.link;
 					}
 				}
-				public  int getLength(Node<T> node){  //获取链表长度
+				public static int getLength(Node node){  //获取链表长度
 					int length=0;
 					while(node!=null){
 						node=node.link;

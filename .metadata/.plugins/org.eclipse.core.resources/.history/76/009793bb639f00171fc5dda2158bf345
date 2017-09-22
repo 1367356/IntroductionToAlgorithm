@@ -13,8 +13,7 @@ public class LinkedList<T> {
 	            public int count;
 				class Node<T>{
 					Node<T> link;
-					int info;
-					T key;
+					int info;	
 				}	
 				public Node<T> createLinked() throws FileNotFoundException{
 					int num=0;
