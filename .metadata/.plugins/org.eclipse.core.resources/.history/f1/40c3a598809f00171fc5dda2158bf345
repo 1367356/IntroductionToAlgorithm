@@ -1,0 +1,33 @@
+package binarytree;
+
+public class BinaryTree<T extends Comparable<T>> {
+				Node<T> root=new Node<T>();
+				public class Node<T extends Comparable<T>>{
+					Node leftChild;
+					Node rightChild;
+					Node parent;
+					T key;
+				}
+			   public void insert(T key){
+				   Node newNode=new Node();
+				   newNode.key=key;
+				   Node tem=root;
+				   if(root==null){
+					   root=newNode;
+					   root.leftChild=null;
+					   root.rightChild=null;
+				   }else{
+					   while(tem!=null){
+						   if (key.compareTo(key)<0){
+						   tem=tem.leftChild;
+					        }
+						   else{
+							   tem=tem.rightChild;
+						   }
+						   }
+				   }
+				   tem=newNode;
+				   tem.leftChild=null;
+				   tem.rightChild=null;
+			   }
+}
