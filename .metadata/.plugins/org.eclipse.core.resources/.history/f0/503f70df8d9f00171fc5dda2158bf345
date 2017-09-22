@@ -26,18 +26,6 @@ public class BinaryTree<T extends Comparable<T>> {
 				tem = tem.rightChild;
 			}
 		}
-		//tem是最后和给定值相等的节点。
-		if tem.rightChild==null
-				transplant();
-		else if  tem.rightChild==null
-				transplant();
-		else y=treeMinimum(tem.rightChild)   //右孩子中的最小值。
-				if
-	}
-
-	private void transplant() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public void insert(T key) { // 向二叉树中插入
