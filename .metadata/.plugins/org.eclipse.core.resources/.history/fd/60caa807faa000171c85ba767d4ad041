@@ -88,7 +88,7 @@ public class BinaryTree<T extends Comparable<T>> {
 		}else if(temNode.key.compareTo(temNode.parent.leftChild.key)==0){
 			temNode.parent.leftChild=rightChild;
 		}else{
-			temNode.parent.rightChild=temNode;
+			temNode.parent.leftChild=temNode;
 		}
 		if(rightChild!=null){
 			rightChild.parent=temNode.parent;

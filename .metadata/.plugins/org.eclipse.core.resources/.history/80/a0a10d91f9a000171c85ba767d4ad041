@@ -30,17 +30,6 @@ public class BinaryTree<T extends Comparable<T>> {
 		}else if(temNode.rightChild==null){
 			transplant(temNode, temNode.leftChild);
 		}
-		else{
-			Node minRight=minimum(temNode.rightChild);
-			if(minRight.parent!=temNode){
-				transplant(minRight, minRight.rightChild);
-				minRight.rightChild=temNode.rightChild;
-				minRight.rightChild.parent=minRight;
-			}
-			transplant(temNode, minRight);
-			minRight.leftChild=temNode.leftChild;
-			minRight.leftChild.parent=minRight;
-		}
 	}
 //	public void delete(T key){
 ////		Node newNode=new Node();
@@ -73,33 +62,11 @@ public class BinaryTree<T extends Comparable<T>> {
 //		
 //	}
 
-	private Node minimum(Node rightChild) {
-		// TODO Auto-generated method stub
-		while(rightChild.leftChild!=null){
-			rightChild=rightChild.leftChild;
-		}
-		return rightChild;
-	}
-
 	private void transplant(Node temNode, Node rightChild) {
 		// TODO Auto-generated method stub
-		if(temNode.parent==null){
-			root=rightChild;
-		}else if(temNode.key.compareTo(temNode.parent.leftChild.key)==0){
-			temNode.parent.leftChild=rightChild;
-		}else{
-			temNode.parent.rightChild=temNode;
-		}
-		if(rightChild!=null){
-			rightChild.parent=temNode.parent;
-		}
+		
 	}
 
-	
-	
-	
-	
-	
 	public void insert(T key) { // 向二叉树中插入
 		Node newNode = new Node();
 		newNode.key = key;

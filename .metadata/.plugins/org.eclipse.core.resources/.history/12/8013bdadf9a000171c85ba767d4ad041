@@ -15,8 +15,5 @@ public class TestClass {
 					bt.insert(2);
 					Node node=bt.root;
 					bt.print(node);
-					
-					bt.delete(3);
-					bt.print(node);
 				}
 }
