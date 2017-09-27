@@ -1,0 +1,12 @@
+package dynamicProgramming;
+
+public class DynamicProgramming {
+			int[] p={1,5,8,9,10,17,17,20,24,30};
+			public int memoizedCutRod(int[] p,int n){
+				int[] r=new int[n];
+				for (int i = 0; i < r.length; i++) {
+					r[i]=-100;
+				}
+				return memoizedCutRodAux(p,n,r);
+			}
+}
