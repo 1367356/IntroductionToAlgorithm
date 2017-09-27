@@ -1,0 +1,13 @@
+package redBlackTree;
+
+public class RedBlackTree {
+	    RBTree NIL;
+	    RBTree root;
+		public class RBTree<T extends Comparable<T>>{
+			RBTree leftChild;
+			RBTree rightChild;
+			RBTree parent;
+			T key;
+			boolean color;
+		}
+}

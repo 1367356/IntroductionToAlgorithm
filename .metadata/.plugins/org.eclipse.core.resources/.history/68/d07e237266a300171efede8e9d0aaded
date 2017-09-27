@@ -11,7 +11,7 @@ public class RBTreeTest {
     private static final boolean mDebugInsert = false;    // "插入"动作的检测开关(false，关闭；true，打开)
     private static final boolean mDebugDelete = false;    // "删除"动作的检测开关(false，关闭；true，打开)
 
-   /* public static void main(String[] args) {
+    public static void main(String[] args) {
         int i, ilen = a.length;
         RBTree<Integer> tree=new RBTree<Integer>();
 
@@ -62,5 +62,5 @@ public class RBTreeTest {
 
         // 销毁二叉树
         tree.clear();
-    }*/
+    }
 }

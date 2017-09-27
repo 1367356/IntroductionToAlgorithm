@@ -1,0 +1,105 @@
+package redBlackTree;
+
+public class RedBlackTree <T extends Comparable<T>>{
+		public static final boolean RED=true;
+		public static final boolean BLACK=false;
+	    public RBTreeNode NIL;
+	    public RBTreeNode root;
+		public class RBTreeNode<T extends Comparable<T>>{
+			RBTreeNode leftChild;
+			RBTreeNode rightChild;
+			RBTreeNode parent;
+			T key;
+			boolean color;
+		}
+		private void print() {
+			// TODO Auto-generated method stub
+			System.out.println(root.key);
+		}
+		public void insert(T key){
+			RBTreeNode newRBTreeNode=new RBTreeNode<>(); 
+			newRBTreeNode.key=key;
+			RBTreeNode y=NIL;
+			RBTreeNode x=root;
+			while(x!=NIL){
+				y=x;
+				if(newRBTreeNode.key.compareTo(x.key)<0){
+					x=x.leftChild;
+				}else{
+					x=x.rightChild;
+				}
+			}
+			newRBTreeNode.parent=y;
+			if(y==NIL){
+				root=newRBTreeNode;
+			}else if(newRBTreeNode.key.compareTo(y.key)<0){
+				y.leftChild=newRBTreeNode;
+			}else{
+				y.rightChild=newRBTreeNode;
+			}
+			newRBTreeNode.leftChild=NIL;
+			newRBTreeNode.rightChild=NIL;
+			newRBTreeNode.color=RED;
+			insertFixUp(newRBTreeNode);
+		}
+		private void insertFixUp(RBTreeNode newRBTreeNode) {
+			// TODO Auto-generated method stub
+			while(newRBTreeNode.parent.color==RED){
+				if(newRBTreeNode.parent==newRBTreeNode.parent.parent.leftChild){
+						RBTreeNode y=newRBTreeNode.parent.parent.rightChild;
+						if(y.color==RED){
+							newRBTreeNode.parent.color=BLACK;
+							y.color=BLACK;
+							newRBTreeNode.parent.parent.color=RED;
+							newRBTreeNode=newRBTreeNode.parent.parent;
+						}else if(newRBTreeNode==newRBTreeNode.parent.rightChild){
+							newRBTreeNode=newRBTreeNode.parent;
+							leftRotate(newRBTreeNode);
+						}else{
+							newRBTreeNode.parent.color=BLACK;
+							newRBTreeNode.parent.parent.color=RED;
+							rightRotate(newRBTreeNode);
+						}
+				}else{
+			            //same as then clause with "right" and "left" changted		
+				}
+			}
+			root.color=BLACK;
+		}
+		private void rightRotate(RBTreeNode newRBTreeNode) {
+			// TODO Auto-generated method stub
+			RBTreeNode x=newRBTreeNode.leftChild;
+			newRBTreeNode.leftChild=x.rightChild;
+			if(x.rightChild!=NIL){
+				x.rightChild.parent=newRBTreeNode;
+			}
+			x.parent=newRBTreeNode.parent;
+			if(newRBTreeNode==NIL){
+				root=x;
+			}else if(newRBTreeNode==newRBTreeNode.parent.leftChild){
+				newRBTreeNode.parent.leftChild=x;
+			}else{
+				newRBTreeNode.parent.rightChild=x;
+			}
+			x.rightChild=newRBTreeNode;
+			newRBTreeNode.parent=x;
+		}
+		private void leftRotate(RBTreeNode newRBTreeNode) {
+			// TODO Auto-generated method stub
+			RBTreeNode  y=newRBTreeNode.rightChild;
+			newRBTreeNode.rightChild=y.leftChild;
+			if(y.leftChild!=null){
+				y.leftChild.parent=newRBTreeNode;
+			}
+			y.parent=newRBTreeNode.parent;
+			if(newRBTreeNode.parent==NIL){
+				root=y;
+			}else if(newRBTreeNode==newRBTreeNode.parent.leftChild){
+				newRBTreeNode.parent.leftChild=y;
+			}else{
+				newRBTreeNode.parent.rightChild=y;
+			}
+			y.leftChild=newRBTreeNode;
+			newRBTreeNode.parent=y;
+		}
+}
