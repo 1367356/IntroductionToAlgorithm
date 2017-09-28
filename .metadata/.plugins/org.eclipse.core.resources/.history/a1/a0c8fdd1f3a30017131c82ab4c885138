@@ -17,7 +17,7 @@ public class DynamicProgramming {
 					}
 					r[j]=q;
 				}
-				return r[n-1];
+				return r[n];
 	      }
 	
 			

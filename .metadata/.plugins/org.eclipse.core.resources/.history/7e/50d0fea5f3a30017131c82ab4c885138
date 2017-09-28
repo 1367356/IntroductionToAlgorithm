@@ -1,25 +1,6 @@
 package dynamicProgramming;
 
 public class DynamicProgramming {
-	
-	
-	      public int bottomUpCutRod(int[] p,int n){
-				int[] r=new int[n];
-				r[0]=0;
-				for (int j = 0; j < r.length; j++) {
-					int q=Integer.MIN_VALUE;
-					for (int i = 0; i < j; i++) {
-						if(q>p[i]+r[j-i]){
-							q=q;
-						}else{
-							q=p[i]+r[j-i];
-						}
-					}
-					r[j]=q;
-				}
-				return r[n-1];
-	      }
-	
 			
 			public int memoizedCutRod(int[] p,int n){
 				int[] r=new int[n];
