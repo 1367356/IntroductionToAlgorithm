@@ -1,13 +1,6 @@
 package dynamicProgramming;
 
 public class TestDynamicProgramming {
-	/**
-	 * 动态规划可以用来求带有重复子问题的最优解等问题。
-	 * 测试动态规划的java类
-	 * int[] p  长度对应的价格数组
-	 * n   钢条长度，这个长度和真正的类中的长度不相同，因为java数组的角标从0开始等。
-	 * @param args
-	 */
 			public static void main(String[] args) {
 				int[] p={0,1,5,8,9,10,17,17,20,24,30};
 				int n=9;  //输入的n，实际为n-1 ;  因为java角标是从0开始的
