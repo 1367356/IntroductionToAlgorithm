@@ -1,23 +1,8 @@
 package binarytree;
 
-
-/**
- * 二叉树结构
- * @author liyafei
- * 
- * @param <T>  参数T是红黑树能够操作存储的泛型，红黑树是一种数据结构，因此树中节点需要存储数据，而T作为参数类型
- *                              保证了红黑树能够存储任意类型的数据，当然一个节点中也可以存储多个数据。另外由于本次测试代码，
- *                              使用的是整形类型，因此使T继承了Comparable接口， 使其具有比较功能，这样书中节点插入删除时，
- *                              可以通过比较大小，来确定插入，删除的位置。	
- */
 public class BinaryTree<T extends Comparable<T>> {
 	Node<T> root = null;
-	/**
-	 * 节点类包含四个属性
-	 * @author liyafei
-	 *
-	 * @param <T>
-	 */
+
 	public class Node<T extends Comparable<T>> {
 		Node leftChild;
 		Node rightChild;
@@ -25,24 +10,16 @@ public class BinaryTree<T extends Comparable<T>> {
 		T key;
 	}
 
-	/**
-	 * 打印节点泛型值
-	 * @param node
-	 */
 	public void print(Node node) {
 		System.out.println(node.leftChild.key);
 	}
 	
-	/**
-	 * 根据泛型值删除节点
-	 * @param key
-	 */
 	public void delete(T key){
 		Node temNode=new Node();
 		Node newNode=new Node();
 		newNode.key=key;
 		temNode=root;
-		while(newNode.key!=temNode.key){                      //先找到要被删除的节点
+		while(newNode.key!=temNode.key){
 		if(temNode.key.compareTo(newNode.key)<0){
 			temNode=temNode.rightChild;
 		}else
@@ -95,12 +72,8 @@ public class BinaryTree<T extends Comparable<T>> {
 //		// TODO Auto-generated method stub
 //		
 //	}
-    /**
-     * 找到某一节点的最小值
-     * @param rightChild
-     * @return
-     */
-	private Node minimum(Node rightChild) {             //二叉树中的最小值
+
+	private Node minimum(Node rightChild) {
 		// TODO Auto-generated method stub
 		while(rightChild.leftChild!=null){
 			rightChild=rightChild.leftChild;
@@ -108,12 +81,7 @@ public class BinaryTree<T extends Comparable<T>> {
 		return rightChild;
 	}
 
-	/**
-	 * 将两个节点交换
-	 * @param temNode   交换的节点
-	 * @param rightChild   交换的右子节点
-	 */
-	private void transplant(Node temNode, Node rightChild) {           
+	private void transplant(Node temNode, Node rightChild) {
 		// TODO Auto-generated method stub
 		if(temNode.parent==null){
 			root=rightChild;
@@ -131,10 +99,7 @@ public class BinaryTree<T extends Comparable<T>> {
 	
 	
 	
-	/**
-	 * 插入节点，根据插入节点的泛型值大小决定插入的位置
-	 * @param key
-	 */
+	
 	public void insert(T key) { // 向二叉树中插入
 		Node newNode = new Node();
 		newNode.key = key;

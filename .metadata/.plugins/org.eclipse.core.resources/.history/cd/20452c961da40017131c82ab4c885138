@@ -7,11 +7,6 @@ import org.omg.PortableInterceptor.INACTIVE;
 import class1.DoubleDirectionLinkedList.doubleNode;
 import class1.LinkedList.Node;
 
-/**
- * 堆栈的测试类
- * @author liyafei
- *
- */
 public class TestClass {
 
 				public static void main(String[] args) throws FileNotFoundException {

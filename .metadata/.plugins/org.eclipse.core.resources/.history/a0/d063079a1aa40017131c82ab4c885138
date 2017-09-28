@@ -2,11 +2,6 @@ package binarytree;
 
 import binarytree.BinaryTree.Node;
 
-/**
- * 二叉树测试类
- * @author liyafei
- *
- */
 public class TestClass {
 				public static void main(String[] args) {
 					BinaryTree<Integer> bt=new BinaryTree<>();

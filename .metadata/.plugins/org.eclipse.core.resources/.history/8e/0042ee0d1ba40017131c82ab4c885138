@@ -4,11 +4,6 @@ import java.util.ArrayList;
 
 import org.omg.PortableInterceptor.INACTIVE;
 
-/**
- * 哈希表测试类
- * @author liyafei
- *
- */
 public class TestClass {
 	        public static HashTable ht=new HashTable();
 			public static void main(String[] args) {
