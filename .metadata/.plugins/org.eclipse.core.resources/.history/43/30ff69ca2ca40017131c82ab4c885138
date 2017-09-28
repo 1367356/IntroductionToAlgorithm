@@ -57,7 +57,7 @@ public class DynamicProgramming {
 	
 	
          /**
-          * 自底向上使用动态规划求解最优值,自底向上主要用一个数组标记着较小问题的解，从小到大依次求解
+          * 自底向上使用动态规划求解最优值
           * @param p 输入的长度对应的价格数组
           * @param n 长度
           * @return 最高价格
@@ -80,8 +80,7 @@ public class DynamicProgramming {
 	      }
 	
 			/**
-			 * 使用带备忘录的动态规划求解最优值，带有备忘录的算法使用递归算法，
-			 * 但是较小问题的解用备忘录记录下来了
+			 * 使用带备忘录的动态规划求解最优值
 			 * @param p长度对应的价格的数组
 			 * @param n 长度
 			 * @return	最优值

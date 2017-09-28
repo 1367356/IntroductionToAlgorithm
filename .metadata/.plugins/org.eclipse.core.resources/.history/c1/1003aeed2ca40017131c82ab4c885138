@@ -2,7 +2,6 @@ package dynamicProgramming;
 
 public class TestDynamicProgramming {
 	/**
-	 * 
 	 * 动态规划可以用来求带有重复子问题的最优解等问题。
 	 * 测试动态规划的java类
 	 * int[] p  长度对应的价格数组
