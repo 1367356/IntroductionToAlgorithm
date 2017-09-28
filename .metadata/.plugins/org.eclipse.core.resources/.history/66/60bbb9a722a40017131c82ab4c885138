@@ -1,0 +1,17 @@
+package dynamicProgramming;
+
+import java.util.List;
+
+/**
+ * 矩阵链的最有括号化方案求解，一组矩阵按照不同的顺序相乘，计算代价是不同的，可以使用动态规划算法来
+ * 求解最优的相乘方案
+ * @author liyafei
+ *
+ */
+public class MatrixChainMultiply {
+			List list;
+			public List matrixChainOrder(int[] p){
+				
+				return list;
+			}
+}

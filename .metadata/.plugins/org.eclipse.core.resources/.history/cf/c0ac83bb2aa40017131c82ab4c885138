@@ -1,0 +1,62 @@
+package dynamicProgramming;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 矩阵链的最有括号化方案求解，一组矩阵按照不同的顺序相乘，计算代价是不同的，可以使用动态规划算法来
+ * 求解最优的相乘方案
+ * @author liyafei
+ *
+ */
+public class MatrixChainMultiply {
+			List list=new ArrayList<int[][]>();
+			
+			/**
+			 * 打印最优顺序
+			 * @param s 保存了最优相乘顺序的数组
+			 * @param i 相乘矩阵的起始点
+			 * @param j 相乘矩阵的结束点
+			 */
+				int f=1;
+			public  void printOptimalParens(int[][] s,int i,int j){
+				if(f++>8)
+					return;
+				if(i==j){
+					System.out.println("A"+i);
+				}else{
+					System.out.println("(");
+					
+					printOptimalParens(s, i, s[i][j]);
+					printOptimalParens(s, s[i][j]+1, j);
+
+					System.out.println(")");
+				}
+			}
+			
+			public List matrixChainOrder(int[] p){
+				int n=p.length-1;
+				int[][] m=new int[n][n];
+				int [][] s=new int[n-1][n];
+				
+				for (int i = 0; i < n; i++) {
+					m[i][i]=0;
+				}
+				for (int l = 2; l < n; l++) {
+					for (int i = 1; i < n-l-+1; i++) {
+						int j=i+l-1;
+						m[i][j]=Integer.MAX_VALUE;
+						for (int k = i; k < j-1; k++) {
+							int q=m[i][k]+m[k+1][j]+p[i-1]*p[k]*p[i];
+							if(q<m[i][j]){
+								m[i][j]=q;
+								s[i][j]=k;
+							}
+						}
+					}
+				}
+				list.add(m);
+				list.add(s);
+				return list;
+			}
+}
