@@ -28,7 +28,6 @@ public class BreadthFirstSearch {
 	 * 可以使用一个开始值（start）和结束值(end)来代表权重(weight)是哪两个节点的。
 	 * 例如：start=2，end=4,weight=8,那么表示2号节点和4号节点之间的权重值为8；
 	 * 可以在data.txt里面每个相邻节点后面跟上权重值。
-	 *  如果求最短距离时，可以用sumWeight记录到该节点总距离的最短距离
 	 */
 	public class Node{
 		double weight;  
@@ -36,7 +35,6 @@ public class BreadthFirstSearch {
 		int key;
 		int start;
 		int end;
-		double sumWeight; 
 	}
 	
 	/**
@@ -53,18 +51,16 @@ public class BreadthFirstSearch {
 			String s=scanner.nextLine();
 			Scanner oneLine=new Scanner(s);
 			Node first=null;
-			Node newNode = null,last=null;
+			Node newNode,last=null;
 			while(oneLine.hasNext()){
 				String s1=oneLine.next();
 				
 				int num=Integer.parseInt(s1);
-				
-				if(first!=null && oneLine.hasNext()){   //创建first之后，读取下一节点时再读取权重
+				if(first!=null){
 				String s2=oneLine.next();//读取权重
 				double weight=Double.parseDouble(s2);
 				newNode.weight=weight;
 				}
-				
 				if(num==999)
 					break;
 				newNode=new Node();
