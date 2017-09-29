@@ -1,0 +1,20 @@
+package RepresentationGraph;
+
+import RepresentationGraph.Graph.Node;
+
+public class TestGraph {
+			public static void main(String[] args) {
+				Graph g=new Graph(100,0);
+				Node[] graph=g.createGraph();
+				for (int i = 0; i < graph.length; i++) {
+					Node first=graph[i];
+					if(first==null){
+						break;
+					}
+					while(first!=null){
+						System.out.print(first.key);
+						first=first.link;
+					}
+				}
+			}
+}

@@ -1,0 +1,11 @@
+package RepresentationGraph;
+
+public class Graph {
+					public Node first,newNode,last;
+					protected Node[] graph;
+					protected int maxSize;
+					protected int gS	ize;
+					public class Node{
+						
+					}
+}

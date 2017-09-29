@@ -1,0 +1,14 @@
+package RepresentationGraph;
+
+public class Graph<T> {
+					public Node<T> first,newNode,last;
+					protected Node<T>[] graph;
+					protected int maxSize;
+					protected int gSize;
+					public int count=0;
+					public class Node<T>{
+						Node link;
+						T key;
+					}
+					
+}

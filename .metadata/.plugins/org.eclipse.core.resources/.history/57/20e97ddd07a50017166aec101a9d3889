@@ -1,0 +1,67 @@
+package RepresentationGraph;
+
+import java.io.InputStream;
+import java.util.Scanner;
+
+/**
+ * 图结构
+ * @author liyafei
+ *
+ * @param <T>  泛型
+ */
+public class Graph<T> {
+					
+					protected Node[] graph;
+					protected int maxSize;
+					protected int gSize;
+					public int count=0;
+					/**
+					 *图中的节点
+					 * @author liyafei
+					 *
+					 * @param <T> 节点中的泛型
+					 */
+					public class Node<T>{
+						Node link;
+						int key;
+					}
+					/**
+					 * 创建图，以链表的方式创建图
+					 * @return 返回图的链表形式，其中数组中每个位置是一个顶点的链表
+					 */
+					public Node[]  createGraph(){
+						Class clazz=this.getClass();
+						InputStream ins=clazz.getResourceAsStream("/data.txt");   //通过外部数据创建链表,使用/加载src目录下的文件
+							                                                                                  //不使用/是加载类路径下的文件
+						Scanner scanner=new Scanner(ins);  //流输入。
+	 				while(scanner.hasNextLine()){
+							String s=scanner.nextLine();
+							Scanner oneLine=new Scanner(s);
+							Node first=null;
+							Node<T> newNode,last=null;
+							while(oneLine.hasNext()){
+								String s1=oneLine.next();
+								System.out.println(s1);
+								int num=Integer.parseInt(s1);
+								if(num==999)
+									break;
+								newNode=new Node<T>();
+								newNode.key=num;
+								newNode.link=null;
+								if(first ==null){
+									first=newNode;
+									last=newNode;
+								}else{
+									last.link=newNode;
+									last=newNode;
+								}
+							}
+							System.out.println(first.key);
+							graph[count]=first;
+							count++;
+				        }
+	 				return graph;
+					}
+	
+					
+}
