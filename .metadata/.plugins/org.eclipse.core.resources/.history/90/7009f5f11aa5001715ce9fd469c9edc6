@@ -28,17 +28,10 @@ public class Graph{
 					 * @author liyafei
 					 *
 					 * @param <> 节点中的泛型
-					 * 有三个属性，下一节点，关键字，两个节点之间的权重，
-					 * 权重应该以矩阵的方式存储（也就是一个二维数组）
-					 * 可以使用一个开始值（start）和结束值(end)来代表权重(weight)是哪两个节点的。
-					 * 例如：start=2，end=4,weight=8,那么表示2号节点和4号节点之间的权重值为8；
 					 */
 					public class Node{
-						double weight;  
 						Node link;
 						int key;
-						int start;
-						int end;
 					}
 					
 					/**
