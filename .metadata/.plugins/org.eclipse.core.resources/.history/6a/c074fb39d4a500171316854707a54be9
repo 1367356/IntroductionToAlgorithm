@@ -99,8 +99,8 @@ public class BreadthFirstSearch {
 						minWeight=smallWeight[v];   //与vertex相邻的节点最小距离
 					}
 				}
+				weightFound[v]=true;	
 			}
-			weightFound[v]=true;	
 			for (int j = 0; j < weightFound.length; j++) {
 				if(!weightFound[j]){
 					if(minWeight+weis[v][j]<smallWeight[j]){

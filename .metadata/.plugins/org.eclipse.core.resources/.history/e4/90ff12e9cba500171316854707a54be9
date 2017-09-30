@@ -10,8 +10,8 @@ public class TestBreathFirstSearch {
 					bfs.createGraph();
 					bfs.printGraph();
 					bfs.printWeightGraph();
-					bfs.shortestPathOfBFS(1);
-					bfs.printShortestPathOfBFS(1);
+					bfs.shortestPathOfBFS(2);
+					bfs.printShortestPathOfBFS(2);
 				
 				}
 }
