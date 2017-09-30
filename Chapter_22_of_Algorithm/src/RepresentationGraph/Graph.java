@@ -39,6 +39,7 @@ public class Graph{
 						int key;
 						int start;
 						int end;
+						String color="WHITE";
 					}
 					
 					/**
@@ -57,7 +58,7 @@ public class Graph{
 //					public Node[]  createGraph(){
 					public List  createGraph(){
 						Class clazz=this.getClass();
-						InputStream ins=clazz.getResourceAsStream("/data.txt");   //通过外部数据创建链表,使用/加载src目录下的文件
+						InputStream ins=clazz.getResourceAsStream("/data1.txt");   //通过外部数据创建链表,使用/加载src目录下的文件
 							                                                                                  //不使用/是加载类路径下的文件
 						Scanner scanner=new Scanner(ins);  //流输入。
 	 				while(scanner.hasNextLine()){
@@ -114,7 +115,7 @@ public class Graph{
 							}
 							System.out.println("打印了第"+(i+1)+"个节点的数据");
 							while(first!=null){
-								System.out.print(first.key);
+								System.out.print(first.key+"  ");
 								first=first.link;
 							}
 							System.out.println("");

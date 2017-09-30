@@ -1,19 +1,24 @@
 package breadth_first_search;
 
+import java.awt.image.SampleModel;
 import java.io.InputStream;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import RepresentationGraph.Graph;
 import RepresentationGraph.Graph.Node;
 
 public class BreadthFirstSearch {
 	protected Node[] graph; // 以数组的方式存储图，需要初始化指定数组的长度
 	protected List<Node> list = new ArrayList<Node>(); // 以数组列表的形式存放图，可以不用初始化，直接添加
+	Graph graphObj=new Graph(100,0);
 	protected int maxSize;
 	protected int gSize;
 	public int count = 1;
 	public double[][] weights;
+	double[] smallWeight;
 	
 	public BreadthFirstSearch(int maxSize, int gSize) {
 		this.maxSize = maxSize;
@@ -30,6 +35,7 @@ public class BreadthFirstSearch {
 	 *        可以使用一个开始值（start）和结束值(end)来代表权重(weight)是哪两个节点的。
 	 *        例如：start=2，end=4,weight=8,那么表示2号节点和4号节点之间的权重值为8；
 	 *        可以在data.txt里面每个相邻节点后面跟上权重值。 如果求最短距离时，可以用sumWeight记录到该节点总距离的最短距离
+	 *			在执行广度优先搜索或者深度优先搜索时，可以用color标记每个节点的颜色，代表每个节点是否已经被搜索过。
 	 */
 	public class Node {
 		double weight;
@@ -38,6 +44,7 @@ public class BreadthFirstSearch {
 		int start;
 		int end;
 		double sumWeight=0;
+		String color="WHITE";
 	}
 
 	/**
@@ -45,12 +52,12 @@ public class BreadthFirstSearch {
 	 * 权重图的大小比节点多1，但是角标为0的位置都没用，为了处理存储的位置与节点的编号相一致
 	 */
 	public double[][] getWeightArray(){
-		weights=new double[list.size()+1][list.size()+1];
+		weights=new double[list.size()][list.size()];
 		for (int i = 0; i < list.size(); i++) {
 			Node node=(Node) list.get(i);
 			while(node!=null){
-			int row=node.start;
-			int col=node.end;
+			int row=node.start-1;
+			int col=node.end-1;
 			double weight=node.weight;
 			weights[row][col]=weight;
 			node=node.link;
@@ -60,20 +67,70 @@ public class BreadthFirstSearch {
 	}
 	
 	/**
-	 * 打印权重图
+	 * 根据权重数组，求最短路径。
 	 */
-	public void printWeightGraph(){
-		double[][] weightsArray=getWeightArray();
-		for (int i = 0; i < weightsArray.length; i++) {
-			System.out.println();
-			double[] wa=weightsArray[i];
-			for (int j = 0; j < wa.length; j++) {
-				System.out.print(wa[j]+"    ");
+	public void shortestPathOfBFS(int vertex){
+		int v=0;  //定义一个常量，用于记录最小点数
+		double minWeight;//定义一个常量，记录最小权重
+		double[][] weis=getWeightArray();
+		int vertexNum=weis.length;
+		int k=weis[vertex].length;
+		smallWeight=new double[k];
+		for (int i = 0; i < smallWeight.length; i++) {
+			smallWeight[i]=weights[vertex][i];
+		}
+		boolean[] weightFound=new boolean[vertexNum];
+		for (int i = 0; i < weightFound.length; i++) {
+			weightFound[i]=false;
+		}
+		weightFound[vertex]=true;
+		smallWeight[vertex]=0;
+		for (int i = 0; i < weightFound.length; i++) {
+			minWeight=Double.MAX_VALUE;
+			for (int j = 0; j < weightFound.length; j++) {
+				if(!weightFound[j]){
+					if(smallWeight[j]<minWeight){
+						v=j;
+						minWeight=smallWeight[v];
+					}
+					weightFound[j]=true;
+				}
 			}
-			
+			for (int j = 0; j < weightFound.length; j++) {
+				if(!weightFound[j]){
+					if(minWeight+weis[v][j]<smallWeight[j]){
+						smallWeight[j]=minWeight+weis[v][j];
+					}
+				}
+			}
+		}
+		
+	}
+	
+	public void printShortestPathOfBFS(int vertex){
+		DecimalFormat twoDigits=new DecimalFormat("0.00");
+		System.out.println("source vertex"+vertex);
+		System.out.println("shortest distance from the source to each vertex");
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println("  "+i+"\t\t"+twoDigits.format(smallWeight[i]));
+			System.out.println(" ");
 		}
 	}
 	
+	/**
+	 * 得到链表的长度
+	 * @param node
+	 * @return
+	 */
+	public int getLength(Node node){
+		int length=0;
+		while(node.link!=null){
+			node=node.link;
+			length++;
+		}
+		return length;
+	}
+
 	/**
 	 * 创建图，以链表的方式创建图
 	 * 
@@ -141,6 +198,20 @@ public class BreadthFirstSearch {
 			System.out.println("起始节点到终止节点的权重"+node.weight);
 			node=node.link;
 			}
+		}
+	}
+	/**
+	 * 打印权重图
+	 */
+	public void printWeightGraph(){
+		double[][] weightsArray=getWeightArray();
+		for (int i = 0; i < weightsArray.length; i++) {
+			System.out.println();
+			double[] wa=weightsArray[i];
+			for (int j = 0; j < wa.length; j++) {
+				System.out.print(wa[j]+"    ");
+			}
+			
 		}
 	}
 
