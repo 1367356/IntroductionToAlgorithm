@@ -1,0 +1,20 @@
+package breadth_first_search;
+
+import java.util.List;
+
+import breadth_first_search.BreadthFirstSearch.Node;
+
+public class TestBreathFirstSearch {
+				public static void main(String[] args) {
+					BreadthFirstSearch bfs=new BreadthFirstSearch(100,0);
+					List list=bfs.createGraph();
+					System.out.println( list.size());
+					for (int i = 0; i < list.size(); i++) {
+						Node node=(Node) list.get(i);
+						System.out.println("i="+i);
+						//System.out.println(node.key);
+						System.out.println(node.end);
+						System.out.println(node.start);
+					}
+				}
+}
