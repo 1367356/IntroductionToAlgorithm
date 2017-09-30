@@ -1,0 +1,11 @@
+package class02;
+
+public class TestBFS {
+
+			public static void main(String[] args) {
+				BFS bfs=new BFS();
+				bfs.createGraph();
+				bfs.printGraph();
+				bfs.printPath(2, 4)
+			}
+}
