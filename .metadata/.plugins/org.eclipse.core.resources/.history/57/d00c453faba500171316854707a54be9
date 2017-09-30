@@ -67,48 +67,42 @@ public class BreadthFirstSearch {
 	}
 	
 	/**
-	 * 根据权重数组，求最短路径。找出给定节点到所有节点的最短路径
+	 * 根据权重数组，求最短路径。
 	 */
 	public void shortestPathOfBFS(int vertex){
 		int v=0;  //定义一个常量，用于记录最小点数
 		double minWeight;//定义一个常量，记录最小权重
 		double[][] weis=getWeightArray();
 		int vertexNum=weis.length;
-		int k=weis[vertex].length;    
+		int k=weis[vertex].length;
 		smallWeight=new double[k];
 		for (int i = 0; i < smallWeight.length; i++) {
-			smallWeight[i]=weights[vertex][i];//将与vertex相邻节点的距离复制出来
+			smallWeight[i]=weights[vertex][i];
 		}
 		boolean[] weightFound=new boolean[vertexNum];
-//		for (int i = 0; i < weightFound.length; i++) {
-//			weightFound[i]=false;
-//		}
+		for (int i = 0; i < weightFound.length; i++) {
+			weightFound[i]=false;
+		}
 		weightFound[vertex]=true;
 		smallWeight[vertex]=0; //源节点到源节点的距离设为0
 		
 		for (int i = 0; i < weightFound.length; i++) {
-			for (int m= 0; m < weightFound.length; m++) {
-				weightFound[m]=false;
-			}
 			minWeight=Double.MAX_VALUE;
-			
 			for (int j = 0; j < weightFound.length; j++) {
 				if(!weightFound[j]){
-					if(smallWeight[j]<minWeight && smallWeight[j]>0){
+					if(smallWeight[j]<minWeight){
 						v=j;
 						minWeight=smallWeight[v];
 					}
 					weightFound[j]=true;
 				}
 			}
-			System.out.println(minWeight);
 			for (int j = 0; j < weightFound.length; j++) {
 				if(!weightFound[j]){
 					if(minWeight+weis[v][j]<smallWeight[j]){
 						smallWeight[j]=minWeight+weis[v][j];
 					}
 				}
-				System.out.println(smallWeight[j]);
 			}
 		}
 		
@@ -119,7 +113,7 @@ public class BreadthFirstSearch {
 		System.out.println("source vertex"+vertex);
 		System.out.println("shortest distance from the source to each vertex");
 		for (int i = 0; i < list.size(); i++) {
-			System.out.println("  "+(i)+"\t\t"+twoDigits.format(smallWeight[i]));
+			System.out.println("  "+(i+1)+"\t\t"+twoDigits.format(smallWeight[i]));
 			System.out.println(" ");
 		}
 	}
@@ -197,12 +191,12 @@ public class BreadthFirstSearch {
 	public void printGraph(){
 		for (int i = 0; i < list.size(); i++) {
 			Node node=(Node) list.get(i);
-//			System.out.println("以第"+(i+1)+"个节点为头节点的链表");
+			System.out.println("以第"+(i+1)+"个节点为头节点的链表");
 			//System.out.println(node.key);
 			while(node!=null){
-//			System.out.print("起始节点"+node.start+"        ");
-//			System.out.print("终止节点"+node.end+"           ");
-//			System.out.println("起始节点到终止节点的权重"+node.weight);
+			System.out.print("起始节点"+node.start+"        ");
+			System.out.print("终止节点"+node.end+"           ");
+			System.out.println("起始节点到终止节点的权重"+node.weight);
 			node=node.link;
 			}
 		}
@@ -220,7 +214,6 @@ public class BreadthFirstSearch {
 			}
 			
 		}
-		System.out.println();
 	}
 
 }

@@ -108,7 +108,6 @@ public class BreadthFirstSearch {
 						smallWeight[j]=minWeight+weis[v][j];
 					}
 				}
-				System.out.println(smallWeight[j]);
 			}
 		}
 		

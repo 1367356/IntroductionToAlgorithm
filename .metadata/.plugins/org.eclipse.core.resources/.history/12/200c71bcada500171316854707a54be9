@@ -94,7 +94,7 @@ public class BreadthFirstSearch {
 			
 			for (int j = 0; j < weightFound.length; j++) {
 				if(!weightFound[j]){
-					if(smallWeight[j]<minWeight && smallWeight[j]>0){
+					if(smallWeight[j]<minWeight){
 						v=j;
 						minWeight=smallWeight[v];
 					}
@@ -108,7 +108,6 @@ public class BreadthFirstSearch {
 						smallWeight[j]=minWeight+weis[v][j];
 					}
 				}
-				System.out.println(smallWeight[j]);
 			}
 		}
 		

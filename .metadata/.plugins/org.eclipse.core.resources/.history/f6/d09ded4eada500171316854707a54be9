@@ -87,14 +87,14 @@ public class BreadthFirstSearch {
 		smallWeight[vertex]=0; //源节点到源节点的距离设为0
 		
 		for (int i = 0; i < weightFound.length; i++) {
-			for (int m= 0; m < weightFound.length; m++) {
-				weightFound[m]=false;
+			for (int i = 0; i < weightFound.length; i++) {
+				weightFound[i]=false;
 			}
 			minWeight=Double.MAX_VALUE;
 			
 			for (int j = 0; j < weightFound.length; j++) {
 				if(!weightFound[j]){
-					if(smallWeight[j]<minWeight && smallWeight[j]>0){
+					if(smallWeight[j]<minWeight){
 						v=j;
 						minWeight=smallWeight[v];
 					}
@@ -108,7 +108,6 @@ public class BreadthFirstSearch {
 						smallWeight[j]=minWeight+weis[v][j];
 					}
 				}
-				System.out.println(smallWeight[j]);
 			}
 		}
 		
