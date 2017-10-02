@@ -6,7 +6,8 @@ public class TestBFS {
 				BFS bfs=new BFS();
 				bfs.createGraph();
 //				bfs.printGraph();
-				bfs.breadthFirstSearch(3);
+				bfs.breadthFirstSearch(2);
 				bfs.printPath(1,2);
+				bfs.printGraph();
 			}
 }

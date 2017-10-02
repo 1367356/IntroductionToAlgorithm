@@ -68,6 +68,7 @@ public class BreadthFirstSearch {
 	
 	/**
 	 * 根据权重数组，求最短路径。找出给定节点到所有节点的最短路径
+	 * 单源节点到其它所有节点的最短距离。
 	 */
 	public void shortestPathOfBFS(int vertex){
 		int v=0;  //定义一个常量，用于记录最小点数
@@ -80,16 +81,16 @@ public class BreadthFirstSearch {
 			smallWeight[i]=weights[vertex][i];//将与vertex相邻节点的距离复制出来
 		}
 		boolean[] weightFound=new boolean[vertexNum];
-//		for (int i = 0; i < weightFound.length; i++) {
-//			weightFound[i]=false;
-//		}
+		for (int i = 0; i < weightFound.length; i++) {
+			weightFound[i]=false;
+		}
 		weightFound[vertex]=true;
 		smallWeight[vertex]=0; //源节点到源节点的距离设为0
 		
 		for (int i = 0; i < weightFound.length; i++) {
-			for (int m= 0; m < weightFound.length; m++) {
-				weightFound[m]=false;
-			}
+//			for (int m= 0; m < weightFound.length; m++) {
+//				weightFound[m]=false;
+//			}
 			minWeight=Double.MAX_VALUE;
 			
 			for (int j = 0; j < weightFound.length; j++) {
@@ -100,10 +101,10 @@ public class BreadthFirstSearch {
 					}
 				}
 			}
-			weightFound[v]=true;	
+			weightFound[v]=true;	//最小的距离标记
 			for (int j = 0; j < weightFound.length; j++) {
 				if(!weightFound[j]){
-					if(minWeight+weis[v][j]<smallWeight[j]){
+					if(minWeight+weis[v][j]<smallWeight[j]){    //如果从源点到v点加上从v点到j点的值，与从源点到j点值比较大小。
 						smallWeight[j]=minWeight+weis[v][j];
 					}
 				}

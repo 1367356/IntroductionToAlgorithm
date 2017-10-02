@@ -18,19 +18,19 @@ import RepresentationGraph.Graph.Node;
 public class BFS {
 	List q=new ArrayList<>();
 	List list=new ArrayList();
-	
 
-	public void printPath(int s,int v){
-		System.out.println(list.size());
+
+	public void printPath(int s,double v){
+		//System.out.println(list.size());
 		Node sn=(Node) list.get(s);   
-		Node vn=(Node) list.get(v);
+		Node vn=(Node) list.get((int)v);
 		if(s==v){
-			   System.out.println(s);
-		   }else if(vn.pre==null){
+			   System.out.println(sn.key);
+		   }else if(vn.pre==null){      //vn的前驱为空
 			   System.out.println("no path from  "+s+"  to  "+v+"  exists");
-		   }else{
+		   }else{           //递归，vn的前驱，也就是v逐渐向前跑
 			   printPath(s, vn.pre.key);
-			   System.out.println(v);
+			   System.out.println(vn.key);
 		   }
 	}
 	
@@ -39,12 +39,16 @@ public class BFS {
 	 * @param vertex 给定的节点
 	 */
 	public void breadthFirstSearch(int vertex){
+		boolean[] nodeFound=new boolean[list.size()];
 		for (int i = 0; i < list.size(); i++) {
 			if(i!=vertex){
 				Node node=(Node) list.get(i);
 				node.color="WHITE";
 				node.d=Double.MAX_VALUE;
 				node.pre=null;
+				nodeFound[i]=false;
+			}else{
+				nodeFound[i]=true;
 			}
 		}
 		
@@ -64,15 +68,15 @@ public class BFS {
 				for (int j = 0; j <= i; j++) {
 					v=v.link;
 				}
-				System.out.println(v.key);
-				if((v.color).equals("WHITE")){
+				if(!nodeFound[v.key-1]){
 					v.color="GRAY";
 					v.d=u.d+1;
 					v.pre=u;
 					q.add(v);
+					nodeFound[v.key-1]=true;
 				}
 			}
-			System.out.println(q.size());
+			//System.out.println(q.size());
 			u.color="BLACK";
 		}
 	}
