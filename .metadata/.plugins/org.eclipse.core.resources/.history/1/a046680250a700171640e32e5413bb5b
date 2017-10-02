@@ -1,0 +1,5 @@
+package minimal_spanning_tree;
+
+public class MSTPrim {
+
+}

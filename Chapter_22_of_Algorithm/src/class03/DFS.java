@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import class02.BFS;
-import class02.BFS.Node;
+
 
 /**
  * 深度优先搜索，用二维数组（矩阵）将图存储起来，处理起来会更方便一些。
@@ -15,12 +15,6 @@ import class02.BFS.Node;
  *
  */
 public class DFS {
-	List list=new ArrayList();
-	double[][] weights;
-	int time;
-	int count=1;
-	boolean[] nodeFound;
-	
 	class Node{
 		Node pre;
 		Node link;
@@ -32,6 +26,13 @@ public class DFS {
 		int end;
 		double weight=1;
 	}
+	List list=new ArrayList();
+	double[][] weights;
+	int time;
+	int count=1;
+	boolean[] nodeFound;
+	
+
 	
 	public void dfs(){
 		double[][] weis=getWeightArray();
