@@ -1,0 +1,5 @@
+package singlesourceshortestpath;
+
+public class TestDijkstraAlgorithm {
+
+}
