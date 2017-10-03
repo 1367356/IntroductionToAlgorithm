@@ -6,6 +6,6 @@ public class TestMSTPrim {
 				mst.createGraph();
 				mst.getWeightArray();
 				//mst.printWeightGraph();
-				mst.mstprim(5);   //最下生成树
+				mst.mstprim(5);
 			}
 }
