@@ -1,0 +1,70 @@
+package minimal_spanning_tree;
+
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ * 最小生成树的prim算法，从一个节点出发，每次找到与所有加入的节点相邻的节点，权重最小的节点加入，不能形成环。
+ * 
+ * @author liyafei
+ * 
+ */
+public class MSTPrim {
+	
+	List list=new ArrayList<>();
+	int count=1;
+	class Node{
+		Node link;
+		Node pre;
+		int weight;
+		int key;
+		int start;
+		int end;
+	}
+	
+	
+			/**
+			 * 先构建带有权重的无向图。
+			 */
+	public List createGraph(){
+		Class clazz=this.getClass();
+		InputStream ins=clazz.getResourceAsStream("/data.txt");
+		Scanner scanner=new Scanner(ins);
+		
+		while(scanner.hasNextLine()){
+			String s1=scanner.nextLine();
+			Scanner oneLine=new Scanner(s1);
+			Node newNode=new Node();
+			Node first=null;
+			Node last=null;
+			while(oneLine.hasNext()){
+				String s2=oneLine.next();
+				int end=Integer.parseInt(s2);
+				if(end==999){
+					break;
+				}
+				if(first!=null){
+					String s3=oneLine.next();
+					int weight=Integer.parseInt(s3);
+					newNode.weight=weight;
+				}
+				newNode.start=count;
+				newNode.end=end;
+				newNode.link=null;
+				if(first==null){
+					first=newNode;
+					last=newNode;
+				}else{
+					last.link=newNode;
+					last=newNode;
+				}
+			}
+			list.add(first);
+			count++;
+		}
+		return list;
+	}
+	
+}

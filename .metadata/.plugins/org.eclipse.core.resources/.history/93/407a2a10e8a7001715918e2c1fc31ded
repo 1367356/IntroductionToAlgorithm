@@ -1,0 +1,118 @@
+package minimal_spanning_tree;
+
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+
+
+/**
+ * 最小生成树的prim算法，从一个节点出发，每次找到与所有加入的节点相邻的节点，权重最小的节点加入，不能形成环。
+ * 
+ * @author liyafei
+ * 
+ */
+public class MSTPrim {
+	
+	List list=new ArrayList<>();
+	int count=1;
+	double[][] weights;
+	
+	class Node{
+		Node link;
+		Node pre;
+		int weight;
+		int key;
+		int start;
+		int end;
+	}
+	
+	/**
+	 * prim 算法求最小生成树
+	 * @param r 根节点
+	 */
+	public void mstprim(int r){   //r是开始的根节点
+		
+	}
+	
+	/**
+	 * 得到创建的带有权重的图，读出相邻节点之间的距离，然后存储到二维数组weights中。
+	 * 权重图的大小比节点多1，但是角标为0的位置都没用，为了处理存储的位置与节点的编号相一致
+	 */
+	public double[][] getWeightArray(){
+		weights=new double[list.size()][list.size()];
+		for (int i = 0; i < list.size(); i++) {
+			Node node=(Node) list.get(i);
+			while(node!=null){
+			int row=node.start-1;
+			int col=node.end-1;
+			double weight=node.weight;
+			weights[row][col]=weight;
+			node=node.link;
+			}
+
+		}
+		return weights;
+	}
+	
+	/**
+	 * 打印权重图
+	 */
+	public void printWeightGraph(){
+		double[][] weightsArray=getWeightArray();
+		for (int i = 0; i < weightsArray.length; i++) {
+
+			double[] wa=weightsArray[i];
+			for (int j = 0; j < wa.length; j++) {
+				System.out.print(wa[j]+"     ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
+	
+			/**
+			 * 先构建带有权重的无向图。
+			 */
+	public List createGraph(){
+		Class clazz=this.getClass();
+		InputStream ins=clazz.getResourceAsStream("/data.txt");
+		Scanner scanner=new Scanner(ins);
+		
+		while(scanner.hasNextLine()){
+			String s1=scanner.nextLine();
+			Scanner oneLine=new Scanner(s1);
+			Node newNode;
+			Node first=null;
+			Node last=null;
+			while(oneLine.hasNext()){
+				String s2=oneLine.next();
+				int end=Integer.parseInt(s2);
+				if(end==999){
+					break;
+				}
+				newNode=new Node();
+				if(first!=null && oneLine.hasNext()){
+					String s3=oneLine.next();
+					int weight=Integer.parseInt(s3);
+					newNode.weight=weight;
+				}
+				newNode.start=count;
+				newNode.end=end;
+				newNode.link=null;
+				if(first==null){
+					first=newNode;
+					last=newNode;
+				}else{
+					last.link=newNode;
+					last=newNode;
+				}
+			}
+			list.add(first);
+			count++;
+		}
+		return list;
+	}
+
+}
