@@ -117,8 +117,8 @@ public class DijkstraAlgorithm {
 			}
 			list2.get(v).add(v);
 			weightFound[v]=true;	//最小的距离标记
-			if(v==end){   //找到终点之后就结束。
-				//System.out.println(v);
+			if(v==end){
+				System.out.println(v);
 				break;
 			}
 			
@@ -138,14 +138,13 @@ public class DijkstraAlgorithm {
 	public void printShortestPathOfBFS(int vertex,int end){
 		shortestPathOfBFS(vertex,end);
 		DecimalFormat twoDigits=new DecimalFormat("0.00");
-//		System.out.println("source vertex"+vertex);
-//		System.out.println("shortest distance from the source to each vertex");
-////		for (int i = 0; i < list.size(); i++) {
+		System.out.println("source vertex"+vertex);
+		System.out.println("shortest distance from the source to each vertex");
+//		for (int i = 0; i < list.size(); i++) {
 //			System.out.println("  "+(i)+"\t\t"+twoDigits.format(smallWeight[i]));
 //			System.out.println(" ");
 //		}
-		System.out.println();
-		System.out.println("从源点"+vertex+"到终点"+end+"的最短距离 "+"\t\t"+twoDigits.format(smallWeight[v]));
+		System.out.println(" 从"+vertex+"到"+end+"的最短距离 "+"\t\t"+twoDigits.format(smallWeight[v]));
 		System.out.println("经过的路径");
 		for (int i = 0; i < list2.get(end).size(); i++) {
 			System.out.println(list2.get(end).get(i));//依次打印从源节点到终点的路径。

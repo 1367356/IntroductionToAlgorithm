@@ -24,8 +24,7 @@ public class DijkstraAlgorithm {
 	double[] smallWeight;
 	int v=0;  //定义一个常量，用于记录最小点数
 	
-	List<List> list2=new ArrayList<>();   //这个列表中的元素为列表，元素列表用来记录查询最短路径过程中，
-	//保存每个节点被查询到之前所经历的路径的。
+	List<List> list2=new ArrayList<>();   //这个数组用来记录查询最短路径过程中，保存每个节点被查询到之前所经历的路径。
 	
 	/**
 	 * 构造函数
@@ -117,8 +116,8 @@ public class DijkstraAlgorithm {
 			}
 			list2.get(v).add(v);
 			weightFound[v]=true;	//最小的距离标记
-			if(v==end){   //找到终点之后就结束。
-				//System.out.println(v);
+			if(v==end){
+				System.out.println(v);
 				break;
 			}
 			
@@ -126,8 +125,7 @@ public class DijkstraAlgorithm {
 				if(!weightFound[j]){
 					if(minWeight+weis[v][j]<smallWeight[j]){    //如果从源点到v点加上从v点到j点的值，与从源点到j点值比较大小。
 						smallWeight[j]=minWeight+weis[v][j];
-						
-						//(v,j)的值记录下来，这是从源节点到j节点经过的路径为v。
+						//(v,j)的值记录下来，这是从源节点到j节点经过的路径和路径值的大小。
 						list2.get(j).add(v);
 					}
 				}
@@ -138,29 +136,21 @@ public class DijkstraAlgorithm {
 	public void printShortestPathOfBFS(int vertex,int end){
 		shortestPathOfBFS(vertex,end);
 		DecimalFormat twoDigits=new DecimalFormat("0.00");
-//		System.out.println("source vertex"+vertex);
-//		System.out.println("shortest distance from the source to each vertex");
-////		for (int i = 0; i < list.size(); i++) {
+		System.out.println("source vertex"+vertex);
+		System.out.println("shortest distance from the source to each vertex");
+//		for (int i = 0; i < list.size(); i++) {
 //			System.out.println("  "+(i)+"\t\t"+twoDigits.format(smallWeight[i]));
 //			System.out.println(" ");
 //		}
-		System.out.println();
-		System.out.println("从源点"+vertex+"到终点"+end+"的最短距离 "+"\t\t"+twoDigits.format(smallWeight[v]));
-		System.out.println("经过的路径");
+		System.out.println("  "+"\t\t"+twoDigits.format(smallWeight[v]));
 		for (int i = 0; i < list2.get(end).size(); i++) {
 			System.out.println(list2.get(end).get(i));//依次打印从源节点到终点的路径。
 		}
 		
-		
 		double d=minValueofPath(list2.get(end));//将这条路径上的最小值找出，用于求最大流最小割问题。
-		System.out.println("路径上的容量最小值"+d);
+		System.out.println(d);
 	}
 	
-	/**
-	 * 找出源节点到终止节点路径上的最小容量。
-	 * @param list3  存放源节点到终止节点路径上节点的列表
-	 * @return  源节点到终止节点路径上最小容量
-	 */
 	private double  minValueofPath(List list3) {
 		// TODO Auto-generated method stub
 		double d =Double.MAX_VALUE;

@@ -144,8 +144,7 @@ public class DijkstraAlgorithm {
 //			System.out.println("  "+(i)+"\t\t"+twoDigits.format(smallWeight[i]));
 //			System.out.println(" ");
 //		}
-		System.out.println();
-		System.out.println("从源点"+vertex+"到终点"+end+"的最短距离 "+"\t\t"+twoDigits.format(smallWeight[v]));
+		System.out.println(" 从源点"+vertex+"到终点"+end+"的最短距离 "+"\t\t"+twoDigits.format(smallWeight[v]));
 		System.out.println("经过的路径");
 		for (int i = 0; i < list2.get(end).size(); i++) {
 			System.out.println(list2.get(end).get(i));//依次打印从源节点到终点的路径。
