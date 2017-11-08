@@ -3,10 +3,7 @@ package mergesort;
 public class MergeSort {
 
 	public int Merge(int[] arr,int low,int high){
-		int j=low;
-		while(low<high){
-			
-		}
+		
 		return 1;
 	}
 }
