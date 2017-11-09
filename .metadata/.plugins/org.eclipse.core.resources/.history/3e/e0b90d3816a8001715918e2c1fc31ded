@@ -1,5 +1,0 @@
-package singlesourceshortestpath;
-
-public class DijkstraAlgorithm {
-
-}

@@ -1,7 +1,0 @@
-package hashtable;
-
-public class HashTable {
-				public void hashInsert(Table talbe,int x){
-					
-				}
-}

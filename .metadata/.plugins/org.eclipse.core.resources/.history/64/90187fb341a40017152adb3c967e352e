@@ -1,9 +1,0 @@
-package dynamicProgramming;
-
-public class TestLongestCommonSequence {
-		public static void main(String[] args) {
-			LongestCommonSequence lcs=new LongestCommonSequence();
-			char[] c1={'A','B','C','A','C','D','B'};
-			char[] c2={'A','B','C','A','B','D','B'};
-		}
-}

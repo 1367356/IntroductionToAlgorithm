@@ -1,0 +1,20 @@
+package mergesort;
+
+public class MergeSort {
+
+	public int merge(int[] arr,int low,int high){
+		int j=low;
+		while(low<high){
+			
+		}
+		return 1;
+	}
+	public int mergeSort(int[] arr,int low,int high){
+		if(low<high){
+			int mid=(low+high)/2;
+			 mergeSort(arr, low, mid-1);
+			 mergeSort(arr, mid+1, high);
+			 merge(arr, low, high);
+		}
+	}	
+}
