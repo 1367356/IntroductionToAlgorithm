@@ -8,6 +8,7 @@ import java.util.Map;
 import mydatastructure.Pojo;
 
 public class MaximumSubArray {
+
 	public Pojo findMaxCrossingSubArray(int[] arr,int low,int mid,int high){
 		Pojo pojo=new Pojo();
 		int leftSum=Integer.MIN_VALUE;
@@ -38,7 +39,6 @@ public class MaximumSubArray {
 	public Pojo findMaximumSubArray(int[] arr,int low,int high){
 		Pojo pojo=new Pojo();
 		int mid=(low+high)/2;
-		int leftLow,leftHigh,leftSum,rightLow,rightHigh,rightSum,crossLow,crossHigh,CrossSum;
 		if(low==high){
 			pojo.setData1(low);
 			pojo.setData2(high);
@@ -47,33 +47,8 @@ public class MaximumSubArray {
 		}else{
 			
 			Pojo pojo1=findMaximumSubArray(arr, low, mid);
-			leftLow=pojo1.getData1();
-			leftHigh=pojo1.getData2();
-			leftSum=pojo1.getData3();
 			Pojo pojo2=findMaximumSubArray(arr, mid+1, high);
-			rightLow=pojo2.getData1();
-			rightHigh=pojo2.getData2();
-			rightSum=pojo2.getData3();
 			Pojo pojo3=findMaxCrossingSubArray(arr, low, mid, high);
-			crossLow=pojo3.getData1();
-			crossHigh=pojo3.getData2();
-			CrossSum=pojo3.getData3();
-			if(leftSum>=rightSum && leftSum>=CrossSum){
-				pojo.setData1(leftLow);
-				pojo.setData2(leftHigh);
-				pojo.setData3(leftSum);
-				return pojo;
-			}else if(rightSum>=leftSum && rightSum>=CrossSum){
-				pojo.setData1(rightLow);
-				pojo.setData2(rightHigh);
-				pojo.setData3(rightSum);
-				return pojo;
-			}else{
-				pojo.setData1(crossLow);
-				pojo.setData2(crossHigh);
-				pojo.setData3(CrossSum);
-				return pojo;
-			}
 		}
 	}
 }

@@ -1,0 +1,12 @@
+package maximumsubarray;
+
+public class MaximumSubArray {
+
+	public void findMaxCrossingSubArray(int[] arr,int low,int mid,int high){
+		int leftSum=Integer.MIN_VALUE;
+		int sum=0;
+		for (int i = mid; i >= 0; i--) {
+			
+		}
+	}
+}

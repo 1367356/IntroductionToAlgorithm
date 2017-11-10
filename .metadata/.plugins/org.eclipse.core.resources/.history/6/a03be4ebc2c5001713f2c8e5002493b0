@@ -8,6 +8,7 @@ import java.util.Map;
 import mydatastructure.Pojo;
 
 public class MaximumSubArray {
+
 	public Pojo findMaxCrossingSubArray(int[] arr,int low,int mid,int high){
 		Pojo pojo=new Pojo();
 		int leftSum=Integer.MIN_VALUE;

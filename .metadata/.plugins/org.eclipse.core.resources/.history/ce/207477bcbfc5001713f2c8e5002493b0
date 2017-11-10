@@ -1,0 +1,8 @@
+package mydatastructure;
+
+public class Pojo {
+
+	int data1;
+	int data2;
+	int data3;
+}

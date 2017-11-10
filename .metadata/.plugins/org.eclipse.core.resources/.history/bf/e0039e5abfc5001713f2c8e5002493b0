@@ -1,0 +1,37 @@
+package maximumsubarray;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class MaximumSubArray {
+
+	public void findMaxCrossingSubArray(int[] arr,int low,int mid,int high){
+		List list=new ArrayList();
+		Map map=new HashMap();
+		int leftSum=Integer.MIN_VALUE;
+		int sum=0;
+		int maxLeft=-1;
+		for (int i = mid; i >= 0; i--) {
+			sum=sum+arr[i];
+			if(sum>leftSum){
+				leftSum=sum;
+				maxLeft=i;
+			}
+		}
+		int rightSum=Integer.MIN_VALUE;
+		sum=0;
+		int maxRight=-1;
+		for (int j = mid+1; j < high; j++) {
+			sum=sum+arr[j];
+			if(sum>rightSum){
+				rightSum=sum;
+				maxRight=j;
+			}
+		}
+		map.put("maxLeft", maxLeft);
+		list.add(maxLeft);
+		
+	}
+}
