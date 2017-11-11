@@ -1,0 +1,20 @@
+package bucketsort;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class BucketSort {
+
+	public void bucketSort(int[] arr){
+		int n=arr.length;
+		List arrb=new ArrayList();
+		List empty=new ArrayList();
+		for (int i = 0; i < n; i++) {
+			arrb.set(i,empty);
+		}
+		for (int i = 0; i < arrb.length; i++) {
+			
+		}
+		
+	}
+}
