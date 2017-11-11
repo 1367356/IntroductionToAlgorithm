@@ -1,0 +1,12 @@
+package chapter05;
+
+public class Bowl {
+	public Bowl(int i) {
+		System.out.println("i"+i);
+	}
+	static{
+		int j=47;
+		System.out.println("j"+j);
+	}
+
+}

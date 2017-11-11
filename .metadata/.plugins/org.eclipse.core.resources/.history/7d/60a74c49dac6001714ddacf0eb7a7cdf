@@ -1,0 +1,9 @@
+package chapter05;
+
+public class BowlTest {
+
+	private void syso() {
+		// TODO Auto-generated method stub
+		Bowl bowl=new Bowl(5);
+	}
+}

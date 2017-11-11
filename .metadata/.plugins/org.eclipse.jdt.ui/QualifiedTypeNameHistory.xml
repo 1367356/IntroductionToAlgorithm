@@ -4,13 +4,15 @@
 <fullyQualifiedTypeName name="dynamicProgramming.LongestCommonSequence"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
 <fullyQualifiedTypeName name="mergesort.MergeSort"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="maximumsubarray.MaximumSubArray"/>
 <fullyQualifiedTypeName name="mydatastructure.Pojo"/>
+<fullyQualifiedTypeName name="quicksort.QuickSort"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="chapter05.Bowl"/>
 </qualifiedTypeNameHistroy>

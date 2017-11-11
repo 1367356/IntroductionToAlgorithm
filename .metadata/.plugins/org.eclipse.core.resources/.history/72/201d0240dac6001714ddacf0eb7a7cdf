@@ -1,0 +1,6 @@
+package chapter05;
+
+public class BowlTest {
+
+	Bowl bowl=new Bowl(5);
+}
