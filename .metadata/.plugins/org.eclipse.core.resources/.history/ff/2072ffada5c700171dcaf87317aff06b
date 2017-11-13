@@ -1,0 +1,17 @@
+package chapter10.eitht.two;
+
+public class GreenhouseControls extends Controller {
+
+	private boolean light=false;
+	public class LightOn extends Event{
+		public LightOn(long delayTime) {
+			super(delayTime);
+		}
+		public void action() {
+			light=true;
+		}
+		public String toString() {
+			return "Light is on";
+		}
+	}
+}

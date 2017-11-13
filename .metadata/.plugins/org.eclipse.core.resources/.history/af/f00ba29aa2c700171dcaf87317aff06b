@@ -1,0 +1,9 @@
+package chapter10.eitht.two;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Controller {
+
+	private List<Event> eventList=new ArrayList();
+}

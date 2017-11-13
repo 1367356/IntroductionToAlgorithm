@@ -1,0 +1,37 @@
+package chapter10.eitht.two;
+
+/**
+ * 控制器子类，在框架中执行
+ * @author admin
+ *
+ */
+public class GreenhouseControls extends Controller {
+
+	private boolean light=false;
+	/**
+	 * 内部类，继承Event，执行具体的事件，
+	 * @author admin
+	 *
+	 */
+	public class LightOn extends Event{
+		public LightOn(long delayTime) {
+			super(delayTime);
+		}
+		public void action() {
+			light=true;  //开关打开
+		}
+		public String toString() {
+			return "Light is on";
+		}
+	}
+	
+	/**
+	 * 
+	 * @author admin
+	 *
+	 */
+	public class lightOff extends Event{
+		
+	}
+	
+}

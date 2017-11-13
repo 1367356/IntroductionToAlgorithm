@@ -1,0 +1,19 @@
+package chapter10.eitht.two;
+
+/**
+ * 由于默认的行为是基于时间去控制的 ，使用抽象类代替接口，描述要控制的事件，
+ * @author admin
+ *
+ */
+public abstract class Event {
+	private long eventTime;
+	protected final long delayTime;
+	public Event(long delayTime) {
+		eventTime=delayTime;
+		start();
+	}
+	private void start() {
+		// TODO Auto-generated method stub
+		eventTime=System.nanoTime()+delayTime;
+	}
+}

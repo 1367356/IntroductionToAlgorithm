@@ -1,0 +1,7 @@
+package chapter10.six;
+
+public class Service {
+
+	void method1();
+	void method2();
+}

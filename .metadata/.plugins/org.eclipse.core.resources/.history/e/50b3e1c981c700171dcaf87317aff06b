@@ -1,0 +1,34 @@
+package chapter10;
+
+public class Sequence {
+
+	private Object[] items;
+	private int next=0;
+	public Sequence(int size) {
+		items=new Object[size];
+	}
+	public void add(Object x){
+		if(next<items.length){
+			items[next++]=x;
+		}
+	}
+	private class SequenceSelector implements Selector{
+
+		private int i=0;
+		public boolean end() {
+			return i==items.length;
+		}
+
+		public Object current() {
+			// TODO Auto-generated method stub
+			return null;
+			return items[i];
+		}
+
+		public void next() {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+}

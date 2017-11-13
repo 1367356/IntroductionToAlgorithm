@@ -1,0 +1,33 @@
+package chapter07;
+
+public class Beetle extends Insect{
+
+	private int k=printInit("Beetle.k initialized");
+	public Beetle() {
+		// TODO Auto-generated constructor stub
+		System.out.println("k"+k);
+		System.out.println("j"+j);
+	}
+	static{
+		System.out.println("Beetle static coding area");
+	}
+	private static int x2=printInit("static Beetle.x2 initialized");
+	public static void main(String[] args) {
+		System.out.println("Beetle constructor");
+		Beetle b=new Beetle();
+	}
+	{
+		System.out.println("Beetle constructor coding area");
+	}
+	/**
+ 执行结果
+static insect.x1 initialized  父类的静态数据和静态方法先加载
+static Beetle.x2 initialized  子类的静态数据和静态方法加载
+Beetle constructor            子类的主函数
+i9,j0
+Beetle.k initialized
+k47
+j39
+
+	 */
+}

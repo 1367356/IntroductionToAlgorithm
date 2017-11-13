@@ -1,0 +1,73 @@
+package chapter10.eitht.two;
+
+/**
+ * 控制器子类，在框架中执行
+ * @author admin
+ *
+ */
+public class GreenhouseControls extends Controller {
+
+	private boolean light=false;  //定义一个开关
+	/**
+	 * 内部类，继承Event，执行具体的事件，
+	 * @author admin
+	 *
+	 */
+	public class LightOn extends Event{
+		public LightOn(long delayTime) {
+			super(delayTime);
+		}
+		public void action() {
+			light=true;  //开关打开
+		}
+		public String toString() {
+			return "Light is on";
+		}
+	}
+	
+	/**
+	 * 
+	 * @author admin
+	 *
+	 */
+	public class lightOff extends Event{
+
+		public lightOff(long delayTime) {
+			super(delayTime);
+			// TODO Auto-generated constructor stub
+		}
+
+		@Override
+		public void action() {
+			// TODO Auto-generated method stub
+			light=false;
+		}
+		public String toString() {
+			return "Light is off";
+		}
+	}
+	
+	/**
+	 * 与上面相同
+	 */
+	private boolean water=false;  
+	public class WaterOn extends Event{
+
+		public WaterOn(long delayTime) {
+			super(delayTime);
+			// TODO Auto-generated constructor stub
+		}
+
+		@Override
+		public void action() {
+			// TODO Auto-generated method stub
+			water=true;
+		}
+		@Override
+		public String toString() {
+			// TODO Auto-generated method stub
+			return "Greenhouse water is on"
+		}
+	}
+	
+}

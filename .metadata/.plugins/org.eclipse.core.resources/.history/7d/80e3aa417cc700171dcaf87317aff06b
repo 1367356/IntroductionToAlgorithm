@@ -1,0 +1,11 @@
+package chapter09;
+
+public class Implementation1Factory implements ServiceFactory{
+
+	public Service getService() {
+		// TODO Auto-generated method stub
+		return null;
+		return new Implementation1();
+	}
+
+}

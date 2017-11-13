@@ -1,0 +1,6 @@
+package test;
+
+public abstract class Test {
+	private int i;
+	abstract void f();
+}

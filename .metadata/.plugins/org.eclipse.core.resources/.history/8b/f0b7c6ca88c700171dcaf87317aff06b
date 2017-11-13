@@ -1,0 +1,16 @@
+package chapter10;
+
+public class DoThis {
+
+	void f(){
+		System.out.println("DotThis.f()");
+	}
+	class Inner{
+		public DoThis outer(){
+			return DoThis.this;
+		}
+	}
+	public Inner inner(){
+		return new Inner();
+	}
+}

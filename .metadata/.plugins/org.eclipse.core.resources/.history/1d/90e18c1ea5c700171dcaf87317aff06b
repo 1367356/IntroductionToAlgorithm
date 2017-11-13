@@ -1,0 +1,10 @@
+package test;
+
+public class TestExtend extends Test{
+
+	void f() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

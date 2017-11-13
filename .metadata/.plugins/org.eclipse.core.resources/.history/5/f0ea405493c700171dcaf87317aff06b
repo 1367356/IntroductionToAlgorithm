@@ -1,0 +1,14 @@
+package chapter10.four;
+
+public class Parcel4 {
+
+	private class PContents implements Contents{
+
+		public int value() {
+			// TODO Auto-generated method stub
+			private int i=11;
+			return i;
+		}
+		
+	}
+}
