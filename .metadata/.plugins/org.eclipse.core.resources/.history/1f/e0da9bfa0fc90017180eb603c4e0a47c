@@ -1,0 +1,6 @@
+package chapter11.five;
+
+public class FamilyVsExactType {
+
+	static void test(Object obj);
+}

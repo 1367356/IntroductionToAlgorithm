@@ -1,0 +1,11 @@
+package chapter15.seven;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LostInformation {
+
+	public static void main(String[] args) {
+		List<Frob> list=new ArrayList<Frob>();
+	}
+}

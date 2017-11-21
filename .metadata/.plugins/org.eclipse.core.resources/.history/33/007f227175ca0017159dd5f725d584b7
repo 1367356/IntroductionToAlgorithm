@@ -1,0 +1,17 @@
+package chapter15.eight;
+
+public class ClassTypeCapture<T> {
+
+	Class<T> kind;
+	public ClassTypeCapture(Class<T> kind){
+		this.kind=kind;
+	}
+	
+}
+
+class Building{
+	
+}
+class House extends Building{
+	
+}

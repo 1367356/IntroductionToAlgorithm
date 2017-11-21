@@ -1,0 +1,10 @@
+package chapter15.eight;
+
+public class ClassAsFactory<T> {
+
+	T x;
+	public ClassAsFactory(T x) {
+		// TODO Auto-generated constructor stub
+		this.x=x;
+	}
+}

@@ -1,0 +1,9 @@
+package chapter15.twelve;
+
+public class Base {
+
+}
+
+class Derived extends Base{
+	
+}

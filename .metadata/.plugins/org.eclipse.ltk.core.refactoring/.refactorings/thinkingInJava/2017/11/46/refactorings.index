@@ -12,3 +12,9 @@
 1510486990396	Extract local variable 'c2'
 1510487028602	Extract local variable 'caller1'
 1510487049592	Extract local variable 'caller2'
+1510620945561	Delete element
+1510666517586	Rename package 'chapter11.myDynamic'
+1510666554748	Delete element
+1510669793355	Rename package 'chapter11'
+1510669856064	Copy packages
+1510731374413	Move compilation units

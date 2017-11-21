@@ -1,0 +1,15 @@
+package chapter11.three;
+
+import java.util.List;
+import java.util.Random;
+
+public abstract class PetCreator {
+
+	private Random rand=new Random(47);
+	public abstract List<Class<? extends Pet>> types();//³éÏó·½·¨
+	
+	public Pet randomPet(){
+		int n=rand.nextInt(types().size());
+		return types().get(n).newInstance();
+	}
+}

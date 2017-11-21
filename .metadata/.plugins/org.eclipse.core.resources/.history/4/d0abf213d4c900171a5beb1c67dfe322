@@ -1,0 +1,13 @@
+package chapter15;
+
+public class LinkedStack<T> {
+
+	private static class Node<U>{
+		U item;
+		Node<U> next;
+		public Node() {
+			item=null;
+			next=null;
+		}
+	}
+}

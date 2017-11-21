@@ -1,0 +1,12 @@
+package chapter15.four;
+
+import java.util.Collection;
+
+import chapter15.three.Generator;
+
+public class Generators {
+	
+	public static <T> Collection<T> fill(Collection<T> coll,Generator<T> gen,int n){
+		
+	}
+}

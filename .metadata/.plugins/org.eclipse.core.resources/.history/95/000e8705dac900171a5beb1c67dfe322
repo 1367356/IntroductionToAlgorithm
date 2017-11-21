@@ -1,0 +1,31 @@
+package chapter15.three;
+
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+
+public class CoffeeGenerator implements Generator<Coffee>,Iterable<Coffee>{
+
+	private Class[] types={Latte.class,Mocha.class,Cappuccino.class,
+	public Iterator<Coffee> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void forEach(Consumer<? super Coffee> action) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Spliterator<Coffee> spliterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Coffee next() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

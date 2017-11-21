@@ -1,0 +1,12 @@
+package chapter11.two;
+
+import chapter11.FancyToy;
+
+public class GenericToyTest {
+
+	public static void main(String[] args) {
+		Class<FancyToy> ftclass=FancyToy.class;
+		
+		FancyToy fancyToy=ftclass.newInstance();
+	}
+}

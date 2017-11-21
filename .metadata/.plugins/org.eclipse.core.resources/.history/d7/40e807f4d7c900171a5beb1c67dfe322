@@ -1,0 +1,8 @@
+package chapter15.one;
+
+import java.util.ArrayList;
+
+public class RandomList<T> {
+
+	private ArrayList<T> storage=new ArrayList<T>();
+}

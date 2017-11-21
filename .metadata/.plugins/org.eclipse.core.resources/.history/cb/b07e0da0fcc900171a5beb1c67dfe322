@@ -1,0 +1,15 @@
+package chapter15.four;
+
+import chapter15.three.Generator;
+
+public class BasicGenerator<T> implements Generator<T>{
+
+	private Class<T> type;
+	public T next() {
+		// TODO Auto-generated method stub
+		
+		
+		return null;
+	}
+
+}

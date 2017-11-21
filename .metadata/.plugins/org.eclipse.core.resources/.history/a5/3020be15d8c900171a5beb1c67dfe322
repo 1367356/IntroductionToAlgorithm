@@ -1,0 +1,14 @@
+package chapter15.one;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class RandomList<T> {
+
+	private ArrayList<T> storage=new ArrayList<T>();
+	private Random rand=new Random(47);
+	public void add(T item) {
+		// TODO Auto-generated method stub
+		storage.add(item);
+	}
+}

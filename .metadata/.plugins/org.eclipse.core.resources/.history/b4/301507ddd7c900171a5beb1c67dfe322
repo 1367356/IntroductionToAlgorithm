@@ -1,0 +1,6 @@
+package chapter15.one;
+
+public class RandomList<T> {
+
+	
+}

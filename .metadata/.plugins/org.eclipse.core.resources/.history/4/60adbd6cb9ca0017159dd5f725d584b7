@@ -1,0 +1,13 @@
+package chapter15.eleven;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+
+public class ClassCasting {
+
+	public void f(String[] args) throws Exception{
+		ObjectInputStream in=new ObjectInputStream(new FileInputStream(args[0]));
+	}
+}

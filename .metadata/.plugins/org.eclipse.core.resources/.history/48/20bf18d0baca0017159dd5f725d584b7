@@ -1,0 +1,5 @@
+package chapter15.eleven;
+
+public class Cat extends ComparablePet implements Comparable<Cat>{//编译器不能通过
+
+}

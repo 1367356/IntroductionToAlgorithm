@@ -1,0 +1,11 @@
+package chapter11.nine;
+
+public class C implements A{
+
+	public void f() {
+		// TODO Auto-generated method stub
+		System.out.println("public C.f()");
+	}
+
+
+}

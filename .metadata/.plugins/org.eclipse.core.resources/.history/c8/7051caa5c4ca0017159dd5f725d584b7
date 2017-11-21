@@ -1,0 +1,5 @@
+package chapter15.seventeen;
+
+public interface Addable {
+
+}

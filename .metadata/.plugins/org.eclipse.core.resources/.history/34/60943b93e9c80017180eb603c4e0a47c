@@ -1,0 +1,12 @@
+package chapter11.three;
+
+import java.util.HashMap;
+
+public class TypeCounter extends HashMap<Class<?>, Integer>{
+
+	private Class<?> baseType;
+	public TypeCounter(Class<?> baseType){
+		this.baseType=baseType;
+	}
+	
+}

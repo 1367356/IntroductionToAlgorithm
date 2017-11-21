@@ -1,0 +1,16 @@
+package chapter15.threeten;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import chapter15.eleven.Cat;
+
+public class CheckedList {
+
+	static void oldStyleMethod(List probablyDogs){
+		probablyDogs.add(new Cat());
+	}
+	public static void main(String[] args) {
+		List<Dog> dogs1=new ArrayList<Dog>();
+	}
+}

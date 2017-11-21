@@ -1,0 +1,13 @@
+package chapter15.eleven;
+
+public class ComparablePet implements Comparable<ComparablePet>{
+
+	/**
+	 * 对象可以与自己进行比较
+	 */
+	public int compareTo(ComparablePet o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

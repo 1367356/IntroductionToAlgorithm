@@ -1,0 +1,17 @@
+package test;
+
+public class IsInstanceTest {
+
+	public static void main(String[] args) {
+		System.out.println(Super.class.isInstance(Super.class));
+		System.out.println(Super.class.isInstance(Sub.class));
+		System.out.println(Sub.class.isInstance(Super.class));
+	}
+}
+
+class Super{
+	
+}
+class Sub extends Super{
+	
+}

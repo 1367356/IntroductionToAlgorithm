@@ -1,0 +1,16 @@
+package chapter15;
+
+/**
+ * 泛型T就是创建对象时指定的类型，指定之后就只能存储这种类型
+ * @author admin
+ *
+ * @param <T>
+ */
+public class Holder3<T> {  
+
+	private T a;
+	public Holder3(T a){
+		this.a=a;
+	}
+	
+}

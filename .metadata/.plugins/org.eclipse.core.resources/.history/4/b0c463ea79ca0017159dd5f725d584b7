@@ -1,0 +1,12 @@
+package chapter15.eight;
+
+public class FactoryConstraint {
+
+}
+
+class Foo2<T>{
+	private T x;
+	public <F extends Factory<T>>Foo2(F factory){
+		x=factory.create();
+	}
+}

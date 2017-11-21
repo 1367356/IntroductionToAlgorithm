@@ -1,0 +1,13 @@
+package chapter15;
+
+public class TwoTuple<A,B> {
+	
+	public final A first;
+
+	public TwoTuple(A first,B two) {
+		this.first = first;
+		this.two=two;
+	}
+	public final B two;
+	
+}

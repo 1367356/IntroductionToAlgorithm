@@ -1,0 +1,19 @@
+package chapter11.myDynamicProxy;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+
+public class DynamicProxy implements InvocationHandler{
+
+	private Object real;
+	public DynamicProxy(Object real) {
+		// TODO Auto-generated constructor stub
+		this.real=real;
+	}
+	public Object invoke(Object proxy, Method method, Object[] args)
+			throws Throwable {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
