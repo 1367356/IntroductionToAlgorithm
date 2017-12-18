@@ -1,0 +1,11 @@
+package chapter17.twelve;
+
+import java.lang.ref.ReferenceQueue;
+
+//ÒıÓÃ
+public class References {
+
+	private static ReferenceQueue<VeryBig> rq=new ReferenceQueue<VeryBig>();
+	
+	public
+}

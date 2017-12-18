@@ -1,0 +1,74 @@
+package chapter17.nine;
+
+import java.util.Comparator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class MapEntry<K, V> implements Map.Entry<K,V>{
+
+	private K key;
+	private V value;
+	public MapEntry(K next, V next2) {
+		// TODO Auto-generated constructor stub
+		key=next;
+		value=next2;
+	}
+
+	public K getKey() {
+		// TODO Auto-generated method stub
+		return key;
+	}
+
+	public V getValue() {
+		// TODO Auto-generated method stub
+		return value;
+	}
+
+	public V setValue(V v) {
+		// TODO Auto-generated method stub
+		V result=value;//全局变量会变蓝，哈哈
+		value=v;
+		return result;
+	}
+
+	public static <K extends Comparable<? super K>, V> Comparator<Entry<K, V>> comparingByKey() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static <K, V extends Comparable<? super V>> Comparator<Entry<K, V>> comparingByValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static <K, V> Comparator<Entry<K, V>> comparingByKey(
+			Comparator<? super K> cmp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static <K, V> Comparator<Entry<K, V>> comparingByValue(
+			Comparator<? super V> cmp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return (key==null? 0:key.hashCode())^(value==null?0:value.hashCode());
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if(!(obj instanceof MapEntry)){
+			return false;
+		}
+		MapEntry me=(MapEntry) obj;
+		return (key==null?me.getKey()==null:key.equals(me.getKey())) &&
+				(value==null?
+						me.getValue()==null:value.equals(me.getValue()));
+	}
+
+}

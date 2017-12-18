@@ -1,0 +1,44 @@
+package chapter17.seven;
+
+public class AssociativeArray<K,V>{
+
+	private Object[][] pairs;
+	private int index;
+	public AssociativeArray(int length) {
+		// TODO Auto-generated constructor stub
+		pairs=new Object[length][2];  //列数为2 [][0]为键，[][1]为值
+	}
+	
+	//模仿map的put方法
+	public void put(K key,V value){
+		if(index>pairs.length){
+			throw new ArrayIndexOutOfBoundsException();
+		}
+		pairs[index++]=new Object[]{key,value};
+	}
+	
+	//模仿map的get方法
+	public V get(K key){
+		for (int i = 0; i < index++; i++) {
+			if(key==pairs[i][0]){
+				return (V) pairs[i][1];
+			}
+		}
+		return null;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		StringBuilder result=new StringBuilder();
+		for (int i = 0; i < index++; i++) {
+			result.append(pairs[i][0].toString());
+			result.append(" ");
+			result.append(pairs[i][1].toString());
+			if(i<index-1)
+				result.append("\n");
+		}
+		return super.toString();
+	}
+	
+}

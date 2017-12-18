@@ -1,0 +1,12 @@
+package chapter17.two;
+
+import chapter15.three.Generator;
+
+public class CollectionDataTest {
+
+	public static void main(String[] args) {
+		
+		CollectionData<StringAddress> coll;
+		System.out.println();
+	}
+}

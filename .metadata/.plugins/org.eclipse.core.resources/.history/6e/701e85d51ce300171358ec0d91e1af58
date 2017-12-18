@@ -1,0 +1,15 @@
+package chapter17.twelve;
+
+public class Element {
+
+	private String ident;
+	public Element(String id) {
+		// TODO Auto-generated constructor stub
+		ident=id;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return ident;
+	}
+}

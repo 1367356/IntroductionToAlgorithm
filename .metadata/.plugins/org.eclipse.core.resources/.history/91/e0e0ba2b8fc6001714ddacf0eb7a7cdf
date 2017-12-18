@@ -1,9 +1,0 @@
-package bucketsort;
-
-public class BucketSort {
-
-	public void bucketSort(int[] arr){
-		int n=arr.length;
-		
-	}
-}

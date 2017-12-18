@@ -1,0 +1,29 @@
+package chapter17.seven;
+
+import java.util.Queue;
+
+import chapter15.three.Generator;
+
+public class QueueBehavior {
+
+	private static int count=10;
+	static <T> void test(Queue<T> queue,Generator<T> gen){
+		for (int i = 0; i < count; i++) {
+			queue.offer(gen.next());
+		}
+		while(queue.peek()!=null){
+			System.out.println(queue.remove()+" ");
+		}
+		System.out.println();
+	}
+	static class Gen implements Generator<String>{
+
+		String[] s=("A B C D E E  F F FD DG D  DS D D  F").split(" ");
+		int i;
+		public String next() {
+			// TODO Auto-generated method stub
+			return ;
+		}
+		
+	}
+}

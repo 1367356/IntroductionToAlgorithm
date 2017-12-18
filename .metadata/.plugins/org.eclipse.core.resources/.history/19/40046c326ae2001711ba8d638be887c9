@@ -1,0 +1,19 @@
+package chapter17.seven;
+
+import java.util.PriorityQueue;
+
+public class ToDoList extends PriorityQueue<ToDoList.ToDoItem>{
+
+	static class ToDoItem implements Comparable<ToDoItem>{
+
+		private char primary;
+		private int secondary;
+		private String item;
+		public int compareTo(ToDoItem o) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+	}
+
+}

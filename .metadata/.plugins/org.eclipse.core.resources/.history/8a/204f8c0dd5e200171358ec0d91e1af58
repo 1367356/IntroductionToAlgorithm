@@ -1,0 +1,18 @@
+package chapter17.nine;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class SpringDetector {
+
+	public static <T extends Groundhog> void detectSpring(Class<T> type) throws Exception, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+		Constructor<T> ghog=type.getConstructor(int.class);  //含有int参数的构造函数
+		Map<Groundhog, Prediction> map=new HashMap<Groundhog, Prediction>();
+		for (int i = 0; i < 10; i++) {
+			map.put(ghog.newInstance(i), new Prediction());
+		}
+		System.out.println("map="+map);
+	}
+}

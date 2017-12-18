@@ -1,0 +1,19 @@
+package chapter17.seven;
+
+public class AssociativeArray<K,V>{
+
+	private Object[][] pairs;
+	private int index;
+	public AssociativeArray(int length) {
+		// TODO Auto-generated constructor stub
+		pairs=new Object[length][2];  //列数为2 [][0]为键，[][1]为值
+	}
+	
+	public void put(K key,V value){
+		if(index>pairs.length){
+			throw new ArrayIndexOutOfBoundsException();
+		}
+		pairs[index++]=new Object[]{key,value};
+	}
+	
+}

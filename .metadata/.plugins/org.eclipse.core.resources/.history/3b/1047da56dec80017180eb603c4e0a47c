@@ -1,9 +1,0 @@
-package chapter11.two;
-
-public class FilledList<T> {
-
-	private Class<T> type;
-	public FilledList(Class<T> type){
-		this.type=type;
-	}
-}

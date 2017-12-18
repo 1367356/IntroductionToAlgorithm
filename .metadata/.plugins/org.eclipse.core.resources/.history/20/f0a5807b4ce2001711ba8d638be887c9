@@ -1,0 +1,21 @@
+package chapter17.two;
+
+import java.util.AbstractMap;
+//享元模式
+public class Countries {
+
+	//国家与首都的Map
+	public static final String[][] DATA={
+	//africa
+	{"ALGERIA","aLGIERS"},
+	{"ANGOLA","luanda"},
+	//asia
+	{"AFGHANISTAN","Lusaka"},
+	{"bahrain","Harare"}
+   };
+	
+	//实现AbstractMap的entrySet方法
+	private static class Flyweightmap extends AbstractMap<String, String>{
+		
+	}
+}

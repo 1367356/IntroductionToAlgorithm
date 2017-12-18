@@ -1,0 +1,17 @@
+package chapter17.two;
+
+public class Countries {
+
+	//国家与首都的Map
+	public static final String[][] DATA={
+	//africa
+	{"ALGERIA","aLGIERS"},
+	{"ANGOLA","luanda"}
+	//asia
+	{"AFGHANISTAN","Lusaka"},
+	{"bahrain","Harare"}
+	
+   };
+	
+	
+}

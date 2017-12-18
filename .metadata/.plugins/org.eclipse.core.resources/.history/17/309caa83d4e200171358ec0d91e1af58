@@ -1,0 +1,22 @@
+package chapter17.nine;
+
+import java.awt.Shape;
+import java.util.Random;
+
+public class Prediction {
+
+	private static Random random=new Random(47);  //传递进参数，创建的随机数将会相同
+	private static boolean shadow=random.nextDouble()>0.5;
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		if(shadow){
+			return "Six more weeks of Winter!";
+		}else{
+			return "Early Spring";
+		}
+	}
+	public static void main(String[] args) {
+		System.out.println(shadow);
+	}
+}

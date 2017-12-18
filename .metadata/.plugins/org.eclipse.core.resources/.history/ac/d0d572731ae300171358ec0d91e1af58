@@ -1,0 +1,29 @@
+package chapter17.twelve;
+
+import java.lang.ref.Reference;
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.SoftReference;
+import java.util.LinkedList;
+
+//ÒýÓÃ
+public class References {
+
+	private static ReferenceQueue<VeryBig> rq=new ReferenceQueue<VeryBig>();
+	
+	public static void checkQueue(){
+		Reference<? extends VeryBig> inq=rq.poll();
+		if(inq!=null){
+			System.out.println("In queue:"+inq.get());
+		}
+	}
+	public static void main(String[] args) {
+		int size=10;
+		if(args.length>0){
+			size=new Integer(args[0]);
+		}
+		LinkedList<SoftReference<VeryBig>> sa=new LinkedList<SoftReference<VeryBig>>();
+		for (int i = 0; i < size; i++) {
+			
+		}
+	}
+}

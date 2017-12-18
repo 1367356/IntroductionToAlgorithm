@@ -1,0 +1,19 @@
+package chapter16.six;
+
+import java.time.chrono.JapaneseChronology;
+
+import chapter15.three.Generator;
+
+public class CountingGenerator {
+
+	public static class Boolean implements Generator<java.lang.Boolean>{
+
+		private boolean value=false;
+		public java.lang.Boolean next() {
+			// TODO Auto-generated method stub
+			value=!value;
+			return null;
+		}
+		
+	}
+}

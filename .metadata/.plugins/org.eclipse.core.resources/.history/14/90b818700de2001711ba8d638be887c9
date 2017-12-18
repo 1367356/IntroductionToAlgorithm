@@ -1,0 +1,18 @@
+package chapter17.two;
+
+import chapter15.three.Generator;
+
+public class CollectionDataTest {
+
+	public static void main(String[] args) {
+		
+		CollectionData<StringAddress> coll=new CollectionData<StringAddress>(new Generator<String>() {
+
+			public String next() {
+				// TODO Auto-generated method stub
+				return "string";
+			}
+		}, 5);
+		System.out.println(coll);
+	}
+}

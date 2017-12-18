@@ -1,0 +1,10 @@
+package chapter17.nine;
+
+import java.lang.reflect.Constructor;
+
+public class SpringDetector {
+
+	public static <T extends Groundhog> void detectSpring(Class<T> type){
+		Constructor<T> ghog=type.getConstructor(type.getClasses());
+	}
+}

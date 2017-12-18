@@ -1,0 +1,15 @@
+package chapter17.two;
+
+import java.util.LinkedHashMap;
+
+import chapter15.three.Generator;
+
+public class MapData<K,V> extends LinkedHashMap<K, V>{
+
+	public MapData(Generator<Pair<K, V>> gen,int quantity) {
+		// TODO Auto-generated constructor stub
+		for (int i = 0; i < quantity; i++) {
+			Pair<K, V> p=gen.next();
+		}
+	}
+}

@@ -1,0 +1,10 @@
+package chapter17.six;
+
+public class SetType {
+
+	int i;
+	public SetType(int n) {
+		// TODO Auto-generated constructor stub
+		i=n;
+	}
+}

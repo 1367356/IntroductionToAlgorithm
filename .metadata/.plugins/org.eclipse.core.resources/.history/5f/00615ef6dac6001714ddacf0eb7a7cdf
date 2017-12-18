@@ -1,9 +1,0 @@
-package chapter05;
-
-public class BowlTest {
-
-	public static void main(String[] args) {
-		Bowl bowl=new Bowl(5);
-	}
-
-}

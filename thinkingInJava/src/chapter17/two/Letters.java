@@ -1,0 +1,56 @@
+package chapter17.two;
+
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+
+import chapter15.three.Generator;
+
+public class Letters implements Generator<Pair<Integer, String>>,Iterable<Integer>{
+	
+	private int size=9;
+	private int number=1;
+	private char letter='A';
+
+	public Iterator<Integer> iterator() {
+		// TODO Auto-generated method stub
+		return new Iterator<Integer>() {
+
+			public boolean hasNext() {
+				// TODO Auto-generated method stub
+				return number<size;
+			}
+
+			public Integer next() {
+				// TODO Auto-generated method stub
+				return number++;
+			}
+
+			public void remove() {
+				// TODO Auto-generated method stub
+				throw new UnsupportedOperationException();
+			}
+
+			public void forEachRemaining(Consumer<? super Integer> action) {
+				// TODO Auto-generated method stub
+				
+			}
+		};
+	}
+
+	public void forEach(Consumer<? super Integer> action) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Spliterator<Integer> spliterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Pair<Integer, String> next() {
+		// TODO Auto-generated method stub
+		return new Pair<Integer, String>(number++, " "+letter++);
+	}
+
+}

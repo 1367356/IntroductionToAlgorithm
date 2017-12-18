@@ -1,6 +1,0 @@
-package chapter10;
-
-public class Sequence {
-
-	private Object[] items;
-}

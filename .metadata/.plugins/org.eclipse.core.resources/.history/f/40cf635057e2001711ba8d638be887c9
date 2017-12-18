@@ -1,0 +1,10 @@
+package chapter17.four;
+
+import java.util.List;
+
+public class Unsupported {
+
+	static void test(String msg,List<String> list){
+		
+	}
+}

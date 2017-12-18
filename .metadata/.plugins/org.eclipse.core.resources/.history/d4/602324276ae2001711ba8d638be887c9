@@ -1,0 +1,11 @@
+package chapter17.seven;
+
+import java.util.PriorityQueue;
+
+public class ToDoList extends PriorityQueue<ToDoList.ToDoItem>{
+
+	static class ToDoItem implements Comparable<ToDoItem>{
+
+	}
+
+}

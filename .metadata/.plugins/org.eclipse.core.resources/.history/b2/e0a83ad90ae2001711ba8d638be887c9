@@ -1,0 +1,10 @@
+package chapter17.two;
+
+public class StringAddress {
+
+	private String s;
+	public StringAddress(String s) {
+		// TODO Auto-generated constructor stub
+		this.s=s;
+	}
+}

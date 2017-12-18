@@ -1,0 +1,10 @@
+package chapter17.six;
+
+public class TreeType extends SetType{
+
+	public TreeType(int n) {
+		super(n);
+		// TODO Auto-generated constructor stub
+	}
+
+}

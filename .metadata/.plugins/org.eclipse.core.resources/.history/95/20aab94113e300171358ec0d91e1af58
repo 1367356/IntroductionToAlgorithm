@@ -1,0 +1,19 @@
+package chapter17.eleven;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * 将容器修改为同步控制的容器
+ * @author admin
+ *
+ */
+public class Synchronization {
+
+	public static void main(String[] args) {
+		Collection<String> c=Collections.synchronizedCollection(new ArrayList<String>());//将容器修改为同步控制的容器
+		List<String> list=Collections.synchronizedList(new ArrayList<String>());
+	}
+}

@@ -10,15 +10,15 @@ public class Erased<T> {
 
 	private final int SIZE=100;
 	public static void f(Object arg){
-		if(arg instanceof T){
-			
-		}
-		T var=new T();
+//		if(arg instanceof T){
+//			
+//		}
+		//T var=new T();  T类型是确定的。
 		
 	}
 	public void g(Object arg){
-		if(arg instanceof T){
-			
-		}
+//		if(arg instanceof T){
+//			
+//		}
 	}
 }

@@ -1,0 +1,8 @@
+package chapter16.one;
+
+public class ContainerComparison {
+
+	public static void main(String[] args) {
+		BeryllimSphere[] spheres=new BeryllimSphere[10];
+	}
+}

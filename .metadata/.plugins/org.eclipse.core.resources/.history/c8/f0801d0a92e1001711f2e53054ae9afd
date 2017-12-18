@@ -1,0 +1,9 @@
+package chapter16.six;
+
+public class GeneratorsTest {
+
+	public static int size=10;
+	public static void test(Class<?> surroundingClass){
+		
+	}
+}

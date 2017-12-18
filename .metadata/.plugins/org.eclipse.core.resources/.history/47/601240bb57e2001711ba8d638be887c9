@@ -1,0 +1,17 @@
+package chapter17.four;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+public class Unsupported {
+
+	static void test(String msg,List<String> list){
+		System.out.println("------"+msg+"------------");
+		Collection<String> c=list;
+		Collection<String> subList=list.subList(1, 4);
+		//copy of subList
+		Collection<String> c2=new ArrayList<String>(subList);
+		
+	}
+}

@@ -1,0 +1,12 @@
+package chapter17.four;
+
+import java.util.Collection;
+import java.util.List;
+
+public class Unsupported {
+
+	static void test(String msg,List<String> list){
+		System.out.println("------"+msg+"------------");
+		Collection<String> subList=list;
+	}
+}

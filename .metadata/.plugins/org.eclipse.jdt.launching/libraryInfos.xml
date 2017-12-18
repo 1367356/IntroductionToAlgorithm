@@ -19,6 +19,7 @@
 <entry path="E:\JDK\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+<libraryInfo home="F:\jdk9\jdk9" version="9"/>
 <libraryInfo home="/usr/lib/jvm/java-7-openjdk-amd64/jre" version="1.7.0_131">
 <bootpath>
 <entry path="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/resources.jar"/>
@@ -59,4 +60,6 @@
 <entry path="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+<libraryInfo home="F:\jdk9\jdkse9" version="9"/>
+<libraryInfo home="F:\jdk9\jre9" version="9"/>
 </libraryInfos>

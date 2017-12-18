@@ -1,7 +1,0 @@
-package randomselect;
-
-public class RandomSelect {
-	public void randomSelect(int[] arr,int p,int r,int i){
-		
-	}
-}

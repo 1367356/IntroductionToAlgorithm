@@ -1,0 +1,10 @@
+package chapter17.nine;
+
+import java.lang.reflect.Constructor;
+
+public class SpringDetector {
+
+	public static <T extends Groundhog> void detectSpring(Class<T> type) throws NoSuchMethodException, SecurityException{
+		Constructor<T> ghog=type.getConstructor(int.class);
+	}
+}

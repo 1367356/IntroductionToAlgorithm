@@ -1,0 +1,10 @@
+package chapter16.six;
+
+public class FillingArrays {
+
+	public static void main(String[] args) {
+		int size=6;
+		boolean[] a1=new boolean[size];
+		byte[] a2=new byte[size];
+	}
+}
