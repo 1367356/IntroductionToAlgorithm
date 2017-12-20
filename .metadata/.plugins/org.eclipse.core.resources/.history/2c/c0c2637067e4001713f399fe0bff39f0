@@ -1,0 +1,22 @@
+package chapter20.one;
+
+import java.lang.reflect.Method;
+import java.util.List;
+
+/**
+ * ×¢½â´¦ÀíÆ÷
+ * @author admin
+ *
+ */
+public class UseCaseTracker {
+
+	public static void trackUseCases(List<Integer> useCases,Class<?> cl){
+		for(Method m:cl.getDeclaredMethods()){
+			UseCase uc=m.getAnnotation(UseCase.class);
+			if(uc!=null){
+				System.out.println("found use case"+uc.id());
+			}
+			useCases.remove(uc.id());
+		}
+	}
+}

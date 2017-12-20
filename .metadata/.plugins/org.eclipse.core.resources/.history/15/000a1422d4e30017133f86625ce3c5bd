@@ -1,0 +1,25 @@
+package chapter19.eleven;
+
+import chapter19.eleven.Outcome.*;
+public enum RoShamBo2 implements Competitor<RoShamBo2>{
+	
+	DRAW,LOSE,WIN,
+	PAPER(DRAW,LOSE,WIN),  //¹¹Ôìº¯Êý
+	SCISSORS(WIN,DRAW,LOSE),
+	ROCK(LOSE,WIN,DRAW);
+	private Outcome vPAPER,vSCISSORS,vROCK;
+	
+	public Outcome compete(RoShamBo2 competitor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private RoShamBo2(Outcome vPAPER, Outcome vSCISSORS, Outcome vROCK) {
+		this.vPAPER = vPAPER;
+		this.vSCISSORS = vSCISSORS;
+		this.vROCK = vROCK;
+	}
+	
+	
+
+}

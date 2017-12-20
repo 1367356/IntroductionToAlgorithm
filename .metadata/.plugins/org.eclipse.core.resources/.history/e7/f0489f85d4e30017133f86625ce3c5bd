@@ -1,0 +1,30 @@
+package chapter19.eleven;
+
+import static chapter19.eleven.Outcome.*;  //静态导入
+public enum RoShamBo2 implements Competitor<RoShamBo2>{
+	
+	PAPER(DRAM,LOSE,WIN),  //构造函数
+	SCISSORS(WIN,DRAM,LOSE),
+	ROCK(LOSE,WIN,DRAM);
+	private Outcome vPAPER,vSCISSORS,vROCK;
+	
+
+	private RoShamBo2(Outcome vPAPER, Outcome vSCISSORS, Outcome vROCK) {
+		this.vPAPER = vPAPER;
+		this.vSCISSORS = vSCISSORS;
+		this.vROCK = vROCK;
+	}
+	
+	public Outcome compete(RoShamBo2 competitor) {
+		// TODO Auto-generated method stub
+		switch (competitor) {
+		case value:
+			
+			break;
+
+		default:
+			break;
+		}
+		return null;
+	}
+}

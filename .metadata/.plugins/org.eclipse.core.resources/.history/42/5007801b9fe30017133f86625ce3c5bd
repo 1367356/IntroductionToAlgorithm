@@ -1,0 +1,5 @@
+package chapter19.four;
+
+public class UpcastEnum {
+
+}

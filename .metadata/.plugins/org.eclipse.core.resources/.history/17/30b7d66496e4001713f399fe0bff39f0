@@ -1,0 +1,79 @@
+package chapter20.two;
+
+import java.io.ObjectInputStream.GetField;
+import java.lang.annotation.*;
+import java.lang.reflect.*;
+import java.util.*;
+
+public class TableCreator {
+
+	public static void main(String[] args) throws Exception {
+//		if(args.length>1){
+//			System.out.println("arguments:annotated classes");
+//			System.exit(0);
+//		}
+		for(String className:args){
+			Class<?> cl=Class.forName(className);
+			DBTable dbTable=cl.getAnnotation(DBTable.class);
+			if(dbTable==null){
+				System.out.println("No DBTable in class :"+className);
+				continue;
+			}			
+			String tableName=dbTable.name(); //得到table的表名
+			if(tableName.length()<1){  //只是用了该注解一次
+				tableName=cl.getName().toUpperCase();
+			}
+			List<String> columnDefs=new ArrayList<String>();//存储列定义的列表
+			for(Field field:cl.getDeclaredFields()){
+				String columnName=null;
+				Annotation[] anns=field.getDeclaredAnnotations(); //得到某一个域注解的数组
+				if(anns.length<1){
+					continue;
+				}
+				if(anns[0] instanceof SQLInteger){  //判断注解是否为SQLInteger或子类型的
+					SQLInteger sInt=(SQLInteger) anns[0];
+					//使用域名，如果名字没有指定。
+					if(sInt.name().length()<1){
+						columnName=field.getName().toUpperCase();
+					}else{
+						columnName=sInt.name();
+					}
+					columnDefs.add(columnName+"INT"+getConstraints(sInt.constraints()));
+				}
+				if(anns[0] instanceof SQLString){  //判断注解是否为SQLInteger或子类型的
+					SQLString sString=(SQLString) anns[0];
+					//使用域名，如果名字没有指定。
+					if(sString.name().length()<1){
+						columnName=field.getName().toUpperCase();
+					}else{
+						columnName=sString.name();
+					}
+					columnDefs.add(columnName+"VARCHAR("+sString.value()+")"+getConstraints(sString.constraints()));
+				}
+				StringBuilder createCommand=new StringBuilder("CREATE TABLE "+tableName+"(");
+				for(String columnDef:columnDefs){
+					createCommand.append("\n "+columnDef+",");
+				}
+				//移除末尾标点符号
+				String tableCreate=createCommand.substring(0, createCommand.length()-1)+");";
+				System.out.println("Table Creation Sql for "+className+"is :\n"+tableCreate);
+			}
+		}
+	}
+
+	private static String getConstraints(Constraints constraints) {
+		// TODO Auto-generated method stub
+		String cons="";
+		if(!constraints.allowNull()){
+			cons+=" NOT NULL ";//这是在constraints中定义的约束，判断取出
+		}
+		if(constraints.primaryKey()){
+			cons+=" PRIMARY KEY ";
+		}
+		if(constraints.unique()){
+			cons+=" UNIQUE";
+		}
+		return cons;
+	}
+	
+}

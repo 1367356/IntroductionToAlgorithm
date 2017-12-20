@@ -1,0 +1,10 @@
+package chapter20.two;
+
+/**
+ * Ä¬ÈÏÖµÉèÖÃ
+ * @author admin
+ *
+ */
+public @interface SimulatingNull {
+
+}

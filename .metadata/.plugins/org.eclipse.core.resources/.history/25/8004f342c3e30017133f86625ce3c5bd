@@ -1,0 +1,26 @@
+package chapter19.ten;
+
+import java.text.DateFormat;
+import java.util.Date;
+
+/**
+ * 为每个enum实例添加方法
+ * @author admin
+ *
+ */
+public enum ConstantSpecifiMethod {
+
+	DATE_TIME{
+		String getInfo(){
+			return DateFormat.getDateInstance().format(new Date());
+		}
+	},
+	
+	CLASSPATH{
+		String getInfo(){
+			return System.getenv("CLASSPATH");
+		}
+	},
+	
+	
+}

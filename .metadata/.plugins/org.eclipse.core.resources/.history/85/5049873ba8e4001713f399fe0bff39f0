@@ -1,0 +1,19 @@
+package chapter20.three;
+
+
+@ExtractInterface("IMultiplier")
+public class Multiplier {
+
+	public int multiplier(int x,int y){
+		int total=0;
+		for (int i = 0; i < x; i++) {
+			total=add(total,y);
+		}
+		return total;
+	}
+
+	private int add(int total, int y) {
+		// TODO Auto-generated method stub
+		return total+y;
+	}
+}

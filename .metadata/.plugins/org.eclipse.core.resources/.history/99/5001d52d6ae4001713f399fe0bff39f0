@@ -1,0 +1,12 @@
+package chapter20.two;
+
+/**
+ * 默认值设置，因为不能出现null,所以一般设置为-1，" "等
+ * @author admin
+ *
+ */
+public @interface SimulatingNull {
+
+	public int id() default -1;
+	public String description() default " ";
+}

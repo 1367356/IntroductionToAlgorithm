@@ -1,0 +1,13 @@
+package chapter19.ten;
+
+import java.text.DateFormat;
+import java.util.Date;
+
+public enum ConstantSpecifiMethod {
+
+	DATE_TIME{
+		String getInfo(){
+			return DateFormat.getDateInstance().format(new Date());
+		}
+	}
+}

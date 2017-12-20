@@ -1,0 +1,12 @@
+package chapter19.two;
+
+public enum SpaceShip {
+
+	SCOUT,CARGO,TRANSPORT,CRUISER,BATTLESHIP;
+	public String toString() {
+		
+		String id=name();
+		String lower=id.substring(1).toLowerCase();
+		return id.charAt(0)+lower;
+	};
+}

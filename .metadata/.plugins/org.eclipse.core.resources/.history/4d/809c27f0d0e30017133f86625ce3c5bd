@@ -1,0 +1,7 @@
+package chapter19.eleven;
+
+public class RoShamBo1 {
+
+	static final int SIZE=20;
+	
+}

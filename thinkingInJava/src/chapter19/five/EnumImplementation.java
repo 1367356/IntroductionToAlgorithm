@@ -1,0 +1,6 @@
+package chapter19.five;
+
+public class EnumImplementation {
+
+}
+

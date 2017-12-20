@@ -40,6 +40,26 @@
 <entry path="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+<libraryInfo home="E:\JDK\jdk" version="1.8.0_66">
+<bootpath>
+<entry path="E:\JDK\jdk\jre\lib\resources.jar"/>
+<entry path="E:\JDK\jdk\jre\lib\rt.jar"/>
+<entry path="E:\JDK\jdk\jre\lib\sunrsasign.jar"/>
+<entry path="E:\JDK\jdk\jre\lib\jsse.jar"/>
+<entry path="E:\JDK\jdk\jre\lib\jce.jar"/>
+<entry path="E:\JDK\jdk\jre\lib\charsets.jar"/>
+<entry path="E:\JDK\jdk\jre\lib\jfr.jar"/>
+<entry path="E:\JDK\jdk\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="E:\JDK\jdk\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="E:\JDK\jdk\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="F:\JDK\jdk" version="9"/>
 <libraryInfo home="/usr/lib/jvm/java-7-openjdk-amd64" version="1.7.0_131">
 <bootpath>
 <entry path="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/resources.jar"/>

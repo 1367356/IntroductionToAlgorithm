@@ -1,0 +1,8 @@
+package chapter19.eleven;
+
+public class RoShamBo {
+
+	public static <T extends Competitor<T>> void match(T a,T b){
+		
+	}
+}

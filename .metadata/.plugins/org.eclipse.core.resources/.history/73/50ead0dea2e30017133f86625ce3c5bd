@@ -1,0 +1,10 @@
+package chapter19.eight;
+
+import java.util.EnumSet;
+
+public class EnumSets {
+
+	public static void main(String[] args) {
+		EnumSet<AlarmPints> points=EnumSet.noneOf(AlarmPints.class);
+	}
+}

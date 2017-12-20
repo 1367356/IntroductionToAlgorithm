@@ -1,0 +1,5 @@
+package chapter20.two;
+
+public @interface DBTable {
+
+}

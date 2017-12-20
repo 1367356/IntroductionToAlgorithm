@@ -1,0 +1,5 @@
+package chapter19.eleven;
+
+public class Rock implements Item{
+
+}

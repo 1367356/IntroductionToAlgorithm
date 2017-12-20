@@ -1,0 +1,5 @@
+package chapter19.two;
+
+public enum OzWitch {
+
+}

@@ -1,0 +1,6 @@
+package chapter19.one;
+
+public enum Shrubbery {
+
+	GROUND,CRAWLING,HANGING
+}

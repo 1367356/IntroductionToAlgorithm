@@ -1,0 +1,28 @@
+package chapter20.three;
+
+import java.util.ArrayList;
+
+import com.sun.mirror.apt.AnnotationProcessor;
+import com.sun.mirror.apt.AnnotationProcessorEnvironment;
+import com.sun.mirror.declaration.MethodDeclaration;
+import com.sun.mirror.declaration.TypeDeclaration;
+
+//实现注解处理器
+public class InterfaceExtractorProcessor implements AnnotationProcessor{
+
+	private final AnnotationProcessorEnvironment env;
+	private ArrayList<MethodDeclaration> interfaceMethods=new ArrayList<MethodDeclaration>();
+	
+	public InterfaceExtractorProcessor(AnnotationProcessorEnvironment env) {
+		// TODO Auto-generated constructor stub
+		this.env=env;
+	}
+	public void process() {
+		// TODO Auto-generated method stub
+		for(TypeDeclaration typeDecl:env.getSpecifiedTypeDeclarations()){
+			ExtractInterface annot=typeDecl.getAnnotation(ExtractInterface.class);
+			if(annot)
+		}
+	}
+
+}

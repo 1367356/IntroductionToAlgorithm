@@ -1,0 +1,6 @@
+package chapter19.eight;
+
+public enum AlarmPints {
+
+	STAIR1,STAIR2,LOBBY,OFFICE1,OFFICE2,OFFICE3,OFFICE4,BATHROOM,UNILITY,KITCHEN
+}

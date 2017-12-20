@@ -1,0 +1,7 @@
+package chapter20.three;
+
+import com.sun.mirror.apt.AnnotationProcessor;
+
+public class InterfaceExtractorProcessor implements AnnotationProcessor{
+
+}

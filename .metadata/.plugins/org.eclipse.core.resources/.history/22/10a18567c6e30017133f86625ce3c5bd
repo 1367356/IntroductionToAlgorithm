@@ -1,0 +1,13 @@
+package chapter19.ten;
+
+public enum OverrideConstantSpecfic {
+
+	NUT,BOLT,WASHER{
+		void f(){
+			System.out.println("overriden mehtod");
+		}
+	};
+	void f(){
+		System.out.println("default behavior");
+	}
+}

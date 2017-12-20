@@ -1,0 +1,5 @@
+package chapter19.eleven;
+
+public enum RoShamBo2 implements Competitor<RoShamBo2>{
+
+}

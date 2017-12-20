@@ -1,0 +1,18 @@
+package chapter20.one;
+
+import org.junit.Test;
+
+public class Testable {
+
+	public static void execute(){
+		System.out.println("Executing");
+	}
+	
+	@chapter20.one.Test
+	void testExecute(){
+		execute();
+	}
+	public static void main(String[] args) {
+		execute();
+	}
+}

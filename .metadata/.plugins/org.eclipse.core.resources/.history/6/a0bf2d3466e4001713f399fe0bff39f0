@@ -1,0 +1,9 @@
+package chapter20.one;
+
+public class PasswordUtils {
+
+	@UseCase(id=47,description="passwords must contain at least one numberic")
+	public boolean validatePassword(String password){
+		return (password.matches("\\w*\\d\\w*"));
+	}
+}

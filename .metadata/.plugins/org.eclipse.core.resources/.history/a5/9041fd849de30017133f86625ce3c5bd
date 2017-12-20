@@ -1,0 +1,6 @@
+package chapter19.two;
+
+public enum Explore {
+
+	HERE,THERE
+}

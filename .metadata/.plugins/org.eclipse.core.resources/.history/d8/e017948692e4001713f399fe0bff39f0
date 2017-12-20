@@ -1,0 +1,23 @@
+package chapter20.two;
+
+public class TableCreator {
+
+	public static void main(String[] args) throws Exception {
+		if(args.length<1){
+			System.out.println("arguments:annotated classes");
+			System.exit(0);
+		}
+		for(String className:args){
+			Class<?> cl=Class.forName(className);
+			DBTable dbTable=cl.getAnnotation(DBTable.class);
+			if(dbTable==null){
+				System.out.println("No DBTable in class :"+className);
+				continue;
+			}			
+			String tableName=dbTable.name(); //得到table的表名
+			if(tableName.length()<1){
+				tableName=cl.getName().toUpperCase();
+			}
+		}
+	}
+}

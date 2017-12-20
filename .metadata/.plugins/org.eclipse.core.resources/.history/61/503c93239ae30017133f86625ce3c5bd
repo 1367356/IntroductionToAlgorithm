@@ -1,0 +1,6 @@
+package chapter19.one;
+
+public class Burrito {
+
+	Spiciness degree;
+}

@@ -1,0 +1,10 @@
+package chapter19.eleven;
+
+public enum RoShamBo2 implements Competitor<RoShamBo2>{
+	;
+	public Outcome compete(RoShamBo2 competitor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

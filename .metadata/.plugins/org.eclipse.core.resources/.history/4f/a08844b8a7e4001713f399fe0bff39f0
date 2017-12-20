@@ -1,0 +1,6 @@
+package chapter20.three;
+
+public @interface ExtractInterface {
+
+	public String value();
+}

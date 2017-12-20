@@ -1,0 +1,13 @@
+package chapter20.three;
+
+import com.sun.mirror.apt.AnnotationProcessor;
+
+//实现注解处理器
+public class InterfaceExtractorProcessor implements AnnotationProcessor{
+
+	public void process() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
